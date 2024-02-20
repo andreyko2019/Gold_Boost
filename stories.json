@@ -1,1 +1,1 @@
-{"v":3,"stories":{}}
+{"v":3,"stories":{"components-defaultbutton--primary":{"id":"components-defaultbutton--primary","name":"Primary","title":"Components/DefaultButton","importPath":"./src/stories/atoms/ui/DefaultButton.stories.js","tags":["story"],"kind":"Components/DefaultButton","story":"Primary","parameters":{"__id":"components-defaultbutton--primary","docsOnly":false,"fileName":"./src/stories/atoms/ui/DefaultButton.stories.js"}}}}
