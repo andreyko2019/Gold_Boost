@@ -1,5 +1,5 @@
 <script setup></script>
 
-<template>Gold Boost</template>
+<template>Gold</template>
 
 <style></style>
