@@ -1,0 +1,19 @@
+@import '@/assets/styles/components/atoms/ui/button';
+
+.transparent-button {
+  border: 1px solid rgba($color: $white-color, $alpha: 30%);
+  background: none;
+  color: $white-color;
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+  &:hover {
+    background: $bright-yellow-color;
+    color: $outer-space-color;
+  }
+
+  &:active {
+    background: $bright-yellow-color;
+  }
+}
