@@ -14,10 +14,13 @@ dist-ssr
 coverage
 *.local
 
+storybook-static
+
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
+# Editor directories and file
+.vscode
 .vscode/*
 !.vscode/extensions.json
 .idea

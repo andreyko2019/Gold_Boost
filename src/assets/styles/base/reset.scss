@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import url('./variables.scss');
 
 * {
   padding: 0;
@@ -8,9 +8,26 @@
   color: $fontColor;
 }
 
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+button,
+a {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 :focus,
@@ -56,10 +73,7 @@ input::-ms-clear {
   display: none;
 }
 
-button,
-a {
-  user-select: none;
-}
+
 
 button {
   cursor: pointer;
@@ -70,17 +84,7 @@ button {
   }
 }
 
-a {
-  text-decoration: none;
 
-  &:visited {
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-}
 
 ul,
 li {
