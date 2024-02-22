@@ -1,10 +1,5 @@
-<template>
-  <DefaultButton>Catalog</DefaultButton> <TransparentButton>Catalog</TransparentButton>
-</template>
+<template></template>
 
-<script setup>
-import DefaultButton from '@/components/atoms/ui/DefaultButton/DefaultButton.vue'
-import TransparentButton from '@/components/atoms/ui/TransparentButton/TransparentButton.vue'
-</script>
+<script setup></script>
 
 <style></style>
