@@ -11,7 +11,6 @@
       />
       <div class="radio-custom"></div>
     </div>
-    
   </div>
 </template>
 

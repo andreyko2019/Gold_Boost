@@ -2,13 +2,13 @@
   <button
     class="button"
     :class="{
-      button_circle: circle == 'true',
-      button_rectangle: rectangle == 'true',
-      button_transparent: transparent == 'true',
-      button_active: active == 'true'
+      button_circle: circle === true,
+      button_rectangle: rectangle === true,
+      button_transparent: transparent === true,
+      button_active: active === true
     }"
   >
-    <slot> </slot>
+    <slot></slot>
   </button>
 </template>
 
@@ -22,5 +22,5 @@ defineProps({
 </script>
 
 <style>
-@import './ButtonUI.scss';
+@import 'ButtonComponent.scss';
 </style>

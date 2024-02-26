@@ -5,6 +5,18 @@
   position: relative;
   cursor: pointer;
 
+  .radio-custom {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: none;
+    border: 2px solid $deep-lavender-color;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s;
+    position: relative;
+  }
+
   .radio-input {
     opacity: 0;
     position: absolute;
@@ -14,40 +26,29 @@
     z-index: 1;
     cursor: pointer;
 
-    &:checked{
-        cursor: auto;
+    &:checked {
+      cursor: auto;
+    }
+
+    &:checked ~ .radio-custom {
+      background: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $amber-color;
+        transition: background-color 0.3s;
+      }
     }
 
     &:not(:checked):hover + .radio-custom {
-      border-color: white;
+      border-color: $white-color;
     }
-  }
-
-  .radio-custom {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: none;
-    border: 2px solid #515377;
-    transition: background-color 0.3s, border-color 0.3s;
-    position: relative;
-  }
-}
-
-.radio-input:checked ~ .radio-custom {
-  background: none;
-
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #ffbd00;
-    transition: background-color 0.3s;
   }
 }

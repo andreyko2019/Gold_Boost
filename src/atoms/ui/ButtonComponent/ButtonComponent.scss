@@ -1,10 +1,8 @@
 @import '@/assets/styles/base/index';
 
-$gradient-default: linear-gradient(93deg, #ffbc19 -3.34%, #fee92c 102.31%);
-$gradient-hover: linear-gradient(93deg, #ffbc19 -3.34%, #fee92c 102.31%);
-$gradient-active: linear-gradient(93deg, #eca700 46.63%, #fcea4c 94.69%);
-$background-hover: #3a3950;
-$background-active: #312f4a;
+$gradient-default: $default-gradient-color;
+$gradient-hover: $default-gradient-color;
+$gradient-active: $gold-gradient-color;
 
 .button {
   display: flex;
@@ -16,18 +14,15 @@ $background-active: #312f4a;
     width: 100%;
   }
 
-  &_circle,
-  &_rectangle {
-    &:focus {
-      outline: 1px solid $focus-color;
-    }
-  }
-
   &_circle {
     border-radius: 50%;
     padding: 14px;
 
     &.button_transparent {
+      max-width: 45px;
+      max-height: 45px;
+      min-width: 45px;
+      min-height: 45px;
       background: none;
       border: 1px solid rgba($color: $white-color, $alpha: 0.2);
 
@@ -36,20 +31,28 @@ $background-active: #312f4a;
       }
 
       &:active {
-        background: $bright-yellow-color;
+        background: $amber-color;
       }
     }
 
+    &:focus {
+      outline: 1px solid $focus-color;
+    }
+
     &:not(.button_transparent) {
-      background: #424461;
+      max-width: 50px;
+      max-height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      background: $deep-slate-color;
       fill: $white-color;
 
       &:hover {
-        background: #3a3950;
+        background: rgba($color: $deep-slate-color, $alpha: 0.7);
       }
 
       &:active {
-        background: #312f4a;
+        background: rgba($color: $deep-slate-color, $alpha: 0.5);
       }
     }
   }
@@ -57,7 +60,7 @@ $background-active: #312f4a;
   &_rectangle {
     border-radius: 50px;
     padding: 18px 38px;
-    color: $outer-space-color;
+    color: $midnight-blue-color;
     font-family: $font-family;
     font-size: 14px;
     font-weight: 700;
@@ -74,22 +77,26 @@ $background-active: #312f4a;
         color 0.3s;
 
       &:hover {
-        background: $bright-yellow-color;
-        color: $outer-space-color;
+        background: $amber-color;
+        color: $midnight-blue-color;
       }
 
       &:active {
-        background: $bright-yellow-color;
+        background: $amber-color;
       }
+    }
+
+    &:focus {
+      outline: 1px solid $focus-color;
     }
 
     &:not(.button_transparent) {
       background: $gradient-default;
-      box-shadow: 0px 5px 15px 0px rgba(255, 188, 0, 0.3);
+      box-shadow: 0 5px 15px 0 rgba(255, 188, 0, 0.3);
 
       &:hover {
         background: $gradient-hover;
-        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 20px 0 rgba($color: $white-color, $alpha: 20%);
       }
 
       &:active {
@@ -104,9 +111,13 @@ $background-active: #312f4a;
     }
     &:hover {
       svg {
-        fill: $outer-space-color;
+        fill: $midnight-blue-color;
       }
     }
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 
   &:not(.button_rectangle, .button_circle) {
@@ -135,9 +146,5 @@ $background-active: #312f4a;
         opacity: 100%;
       }
     }
-  }
-
-  &:active {
-    transform: scale(0.95);
   }
 }

@@ -1,5 +1,18 @@
 @import './normalize';
 
-body{
-    background: $outer-space-color;
+body {
+  background: $midnight-blue-color;
+}
+
+[class*='__container'] {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }

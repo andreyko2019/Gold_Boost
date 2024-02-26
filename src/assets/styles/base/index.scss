@@ -4,3 +4,10 @@
 @import './keyframes';
 @import './mixins';
 @import './base';
+
+.line {
+  width: 100%;
+  min-height: 1px;
+  height: 1px;
+  background: rgba($color: $white-color, $alpha: 10%);
+}

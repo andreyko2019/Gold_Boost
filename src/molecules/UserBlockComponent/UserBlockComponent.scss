@@ -1,0 +1,39 @@
+@import '@/assets/styles/base/index';
+
+.user-block {
+  display: flex;
+  margin-left: 66px;
+
+  @include media-breakpoint-down(lg) {
+    margin-left: 10px;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-left: 0;
+  }
+
+  .button:not(:first-child) {
+    &:last-child {
+      margin-left: 40px;
+      @include media-breakpoint-down(lg) {
+        margin-left: 10px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+      }
+    }
+
+    &.button_circle {
+      margin-left: 15px;
+
+      @include media-breakpoint-down(lg) {
+        margin-left: 10px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+      }
+    }
+  }
+}
