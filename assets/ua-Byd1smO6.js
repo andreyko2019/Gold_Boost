@@ -1,0 +1,1 @@
+const t={en:"En",ua:"Ua"},e={signIn:"Увійти",signUp:"Реєстрація",reviews:"Відгуки",howItWorks:"Як це працює",contactSupport:"Служба підтримки",attentionText:"залиште відгук на Trustpilot і отримайте додаткову знижку 10% на наступне замовлення!"},o={locale:t,header:e};export{o as default,e as header,t as locale};
