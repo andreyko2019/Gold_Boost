@@ -19,9 +19,10 @@
     "deploy-storybook": "gh-pages -d storybook-static -b storybook"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^2.0.0",
     "axios": "^1.6.7",
     "vue": "^3.4.15",
-    "vue-i18n": "^9.9.0",
+    "vue-i18n": "^9.9.1",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/test-utils": "^2.4.0-alpha.2",
+    "dotenv": "^16.4.5",
     "eslint": "^8.49.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^9.17.0",

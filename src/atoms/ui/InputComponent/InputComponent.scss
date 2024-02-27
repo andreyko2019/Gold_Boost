@@ -1,0 +1,12 @@
+@import '@/assets/styles/base/index';
+
+.input{
+  background-color: $deep-midnight-blue-color;
+  color: rgba($color: $white-color, $alpha: 30%);
+  font-family: $font-family;
+  padding: 16px 20px 18px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 50px;
+  width: 100%;
+}

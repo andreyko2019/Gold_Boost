@@ -3,7 +3,7 @@
     <div class="header__attention-block header-attention-block">
       <div class="header-attention-block__container">
         <p class="header-attention-block__text">
-          {{ $t('headerAttentionText') }}
+          {{ $t('header.attentionText') }}
         </p>
       </div>
     </div>
@@ -22,7 +22,7 @@
         />
       </nav>
 
-      <DropdownComponent class="header__dropdown" />
+      <LanguageSwitcher class="header__dropdown" />
 
       <div class="header__menu menu" :class="{ 'is-active': isBurgerActive }">
         <div class="menu__outside-block" @click="closeMenu"></div>
@@ -61,30 +61,35 @@
 <script setup>
 import { ref } from 'vue'
 import LogoComponent from '@/atoms/LogoComponent/LogoComponent.vue'
-import DropdownComponent from '@/atoms/ui/DropdownComponent/DropdownComponent.vue'
 import LinkComponent from '@/atoms/ui/LinkComponent/LinkComponent.vue'
 import UserBlockComponent from '@/molecules/UserBlockComponent/UserBlockComponent.vue'
+import LanguageSwitcher from '@/molecules/LanguageSwitcher/LanguageSwitcher.vue'
 
 const isBurgerActive = ref(false)
 
 const links = [
   {
-    text: 'Reviews',
+    text: 'header.reviews',
     link: '/'
   },
   {
-    text: 'How it works',
+    text: 'header.howItWorks',
     link: '/'
   },
   {
-    text: 'Contact support',
+    text: 'header.contactSupport',
     link: '/',
     class: 'link_gradient'
   }
 ]
 
+function toggleAppScroll(isDisabled) {
+  document.body.style.overflow = isDisabled ? 'hidden' : ''
+}
+
 const toggleBurger = () => {
   isBurgerActive.value = !isBurgerActive.value
+  toggleAppScroll(isBurgerActive.value)
 }
 
 const closeMenu = () => {

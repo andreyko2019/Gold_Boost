@@ -1,12 +1,12 @@
 <template>
   <div class="user-block" :class="{ 'user-block_main': isHomePage }">
-    <ButtonComponent v-show="isHomePage" @click="goToHomePage" circle
+    <ButtonComponent v-show="!isHomePage" @click="goToHomePage" circle
       ><SearchIcon
     /></ButtonComponent>
 
     <ButtonComponent circle><SupermarketIcon /></ButtonComponent>
 
-    <ButtonComponent rectangle transparent>{{ $t('sign up') }}</ButtonComponent>
+    <ButtonComponent rectangle transparent>{{ $t('header.signIn') }}</ButtonComponent>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const isHomePage = route.path === '/'
+const isHomePage = route.path === '/' || route.path === `/${route.params.locale}`
 
 const goToHomePage = () => {
   router.push('/')

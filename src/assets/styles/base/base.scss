@@ -2,6 +2,10 @@
 
 body {
   background: $midnight-blue-color;
+
+  @include media-breakpoint-up(md){
+    overflow: auto!important;
+  }
 }
 
 [class*='__container'] {
@@ -12,7 +16,10 @@ body {
 }
 
 .wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
 }
