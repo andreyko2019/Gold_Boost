@@ -1,4 +1,5 @@
 <template>
+<!--  delete-->
   <button class="button button-circle" :class="{ transparent }">
     <slot></slot>
   </button>

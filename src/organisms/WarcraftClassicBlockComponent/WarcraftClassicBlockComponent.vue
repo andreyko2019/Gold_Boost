@@ -1,4 +1,5 @@
 <template>
+<!--  refactoging-->
   <section class="warcraft-classic-section">
     <div class="warcraft-classic-section__container">
       <CardsFilterBlockComponent

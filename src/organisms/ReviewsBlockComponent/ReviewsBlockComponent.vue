@@ -71,12 +71,12 @@ const listReviews = [
 ]
 
 const swiperOptions = {
-  initialSlide: 0,
+  initialSlide: 0, //refactoring
   spaceBetween: 15,
   breakpoints: {
     0: {
       slidesPerView: '1',
-      allowTouchMove: true
+      allowTouchMove: true //refactoring
     },
     375: {
       slidesPerView: 'auto',

@@ -1,10 +1,13 @@
 <template>
+<!--  refactoring-->
   <div class="user-block" :class="{ 'user-block_main': isHomePage }">
-    <ButtonComponent v-show="!isHomePage" @click="goToHomePage" circle
-      ><SearchIcon
-    /></ButtonComponent>
+    <ButtonComponent v-show="!isHomePage" @click="goToHomePage" circle>
+      <SearchIcon />
+    </ButtonComponent>
 
-    <ButtonComponent ariaLabel="Basket button" circle><SupermarketIcon /></ButtonComponent>
+    <ButtonComponent ariaLabel="Basket button" circle>
+      <SupermarketIcon />
+    </ButtonComponent>
 
     <ButtonComponent rectangle transparent>{{ $t('header.signIn') }}</ButtonComponent>
   </div>

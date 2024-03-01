@@ -25,13 +25,13 @@
   }
 }
 
-.img_desktop {
+.img_desktop { // todo: delete === picture
   @include media-breakpoint-down(md) {
     display: none;
   }
 }
 
-.img_mobile {
+.img_mobile { // todo: delete
   @include media-breakpoint-up(md) {
     display: none;
   }

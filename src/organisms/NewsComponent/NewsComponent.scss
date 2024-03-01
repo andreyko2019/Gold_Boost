@@ -10,6 +10,8 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 20px;
+    // refactoring
+    gap: 20px;
 
     @include media-breakpoint-down(md) {
       grid-template-columns: repeat(2, 1fr);

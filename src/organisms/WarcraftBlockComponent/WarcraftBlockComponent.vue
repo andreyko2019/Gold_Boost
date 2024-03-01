@@ -1,4 +1,5 @@
 <template>
+<!--  refactoring-->
   <section class="warcraft-section">
     <div class="warcraft-section__container">
       <CardsFilterBlockComponent

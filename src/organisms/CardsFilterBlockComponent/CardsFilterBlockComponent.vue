@@ -1,4 +1,5 @@
 <template>
+<!--  refactoring-->
   <div class="cards-filter-block">
     <div class="cards-filter-block__header">
       <div class="cards-filter-block__title-block">
@@ -26,8 +27,9 @@
         </SwiperSlide>
       </Swiper>
 
-      <ButtonComponent class="cards-filter-block__button" v-if="button" rectangle transparent
-        >Catalog</ButtonComponent
+      <ButtonComponent class="cards-filter-block__button" v-if="button" rectangle transparent>
+        Catalog
+      </ButtonComponent
       >
     </div>
 

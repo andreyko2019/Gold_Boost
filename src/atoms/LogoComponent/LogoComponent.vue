@@ -1,18 +1,22 @@
 <template>
-  <a class="logo" href="/"
-    ><picture>
+<!--  todo: formating code-->
+  <a class="logo" href="/">
+<!--    todo: picture components-->
+    <picture>
       <source srcset="@/assets/images/LogoComponent/LogoComponentImg.webp" type="image/webp" />
 
       <img
         class="logo__picture-img"
         src="@/assets/images/LogoComponent/LogoComponentImg.png"
         alt="Logo"
-      /> </picture
+      />
+    </picture
   ></a>
 </template>
 
 <script></script>
 
-<style>
+<!--scoped-->
+<style scoped>
 @import './LogoComponent.scss';
 </style>

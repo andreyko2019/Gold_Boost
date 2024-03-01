@@ -33,8 +33,9 @@
     grid-area: title;
     width: 100%;
     display: flex;
-
+    //refactoring
     column-gap: 20px;
+
     @include media-breakpoint-down(xs) {
       justify-content: space-between;
     }

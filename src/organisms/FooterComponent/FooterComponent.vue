@@ -12,7 +12,11 @@
           </p>
 
           <div class="footer__locations">
-            <p class="footer__locations-title"><LocateIcon />{{ $t('footer.location.title') }}</p>
+            <p class="footer__locations-title">
+              <LocateIcon />
+
+              {{ $t('footer.location.title') }}
+            </p>
 
             <ul class="footer__locations-list">
               <li

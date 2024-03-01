@@ -1,5 +1,6 @@
 <template>
   <div class="review-component">
+<!--    refactoring BEM-->
     <div class="review-component__date-block">
       <CalendarIcon class="review-component__date-block-icon" />
 

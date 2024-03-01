@@ -5,9 +5,9 @@
       :placeholderText="$t('footer.discount.inputPlaceholder')"
     />
 
-    <ButtonComponent class="input-block__button" rectangle>{{
-      $t('footer.discount.button')
-    }}</ButtonComponent>
+    <ButtonComponent class="input-block__button" rectangle>
+      {{$t('footer.discount.button')}}
+    </ButtonComponent>
   </div>
 </template>
 

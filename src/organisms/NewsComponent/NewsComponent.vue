@@ -1,4 +1,5 @@
 <template>
+<!--  refactoring-->
   <section class="latest-news-section">
     <div class="latest-news-section__container">
       <h2 class="latest-news-section__title section-title">latest news</h2>

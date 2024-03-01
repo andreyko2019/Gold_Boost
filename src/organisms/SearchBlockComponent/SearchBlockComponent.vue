@@ -1,4 +1,5 @@
 <template>
+<!--  refactoring-->
   <section class="search-section">
     <div class="search-section__container">
       <h1 class="search-section__title">

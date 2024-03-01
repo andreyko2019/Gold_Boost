@@ -84,6 +84,7 @@ const links = [
   }
 ]
 
+// add scroll lock
 function toggleAppScroll(isDisabled) {
   document.body.style.overflow = isDisabled ? 'hidden' : ''
 }

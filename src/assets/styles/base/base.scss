@@ -4,19 +4,19 @@ body {
   background: $midnight-blue-color;
 
   @include media-breakpoint-up(md) {
-    overflow: auto !important;
+    overflow: auto !important; // todo: delete
   }
 }
 
-[class*='__container'] {
+[class*='__container'] { // todo: delete
   max-width: 1210px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 15px; // todo: delete
+  padding-right: 15px; // todo: delete
 }
 
 .wrapper {
-  min-height: 100vh;
+  min-height: 100vh; // todo: delete
   width: 100%;
   height: 100%;
   display: flex;

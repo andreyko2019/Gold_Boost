@@ -1,5 +1,6 @@
 <template>
   <div class="background-img-block">
+<!--    refactoging-->
     <img
       class="background-img-block__img img_desktop"
       src="@/assets/images/MainPage/background-1.webp"
@@ -22,6 +23,8 @@
 
     <WarcraftBlockComponent />
   </div>
+
+<!--  refactoring-->
 
   <component :is="lazyWarcraftClassicBlock" />
 
