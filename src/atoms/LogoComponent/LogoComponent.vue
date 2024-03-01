@@ -1,6 +1,6 @@
 <template>
   <a class="logo" href="/"
-    ><picture class="logo__picture">
+    ><picture>
       <source srcset="@/assets/images/LogoComponent/LogoComponentImg.webp" type="image/webp" />
 
       <img
