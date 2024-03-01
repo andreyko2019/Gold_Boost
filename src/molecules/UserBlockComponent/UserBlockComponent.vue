@@ -4,7 +4,7 @@
       ><SearchIcon
     /></ButtonComponent>
 
-    <ButtonComponent circle><SupermarketIcon /></ButtonComponent>
+    <ButtonComponent ariaLabel="Basket button" circle><SupermarketIcon /></ButtonComponent>
 
     <ButtonComponent rectangle transparent>{{ $t('header.signIn') }}</ButtonComponent>
   </div>

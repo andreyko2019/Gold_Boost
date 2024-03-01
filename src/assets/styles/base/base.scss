@@ -3,8 +3,8 @@
 body {
   background: $midnight-blue-color;
 
-  @include media-breakpoint-up(md){
-    overflow: auto!important;
+  @include media-breakpoint-up(md) {
+    overflow: auto !important;
   }
 }
 

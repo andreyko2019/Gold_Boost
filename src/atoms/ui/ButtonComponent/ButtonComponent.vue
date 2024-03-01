@@ -7,6 +7,7 @@
       button_transparent: transparent === true,
       button_active: active === true
     }"
+    :aria-label="arialLabel"
   >
     <slot></slot>
   </button>
@@ -14,6 +15,7 @@
 
 <script setup>
 defineProps({
+  arialLabel: String,
   rectangle: Boolean,
   circle: Boolean,
   transparent: Boolean,

@@ -22,7 +22,7 @@
               >
                 <LinkComponent
                   class="footer__locations-item-link"
-                  :text="item.text"
+                  :text="$t(item.text)"
                   :to="item.to"
                 />
               </li>
@@ -34,7 +34,7 @@
           <div class="footer-nav__item" v-for="(item, index) in footerNavList" :key="index">
             <p class="footer-nav__item-title">{{ $t(item.title) }}</p>
 
-            <ul class="footer-nav__item-list">
+            <div class="footer-nav__item-list">
               <LinkComponent
                 class="footer-nav__item-link link_regular"
                 v-for="(link, index) in item.linksList"
@@ -43,7 +43,7 @@
                 :to="link.to"
                 ><component :is="link.icon" class="footer__social-icon"></component
               ></LinkComponent>
-            </ul>
+            </div>
           </div>
         </nav>
 

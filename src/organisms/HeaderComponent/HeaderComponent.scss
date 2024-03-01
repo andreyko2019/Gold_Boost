@@ -72,10 +72,11 @@
 }
 
 .header {
-  position:sticky;
+  position: sticky;
   top: 0;
   background: $deep-midnight-blue-color;
   box-shadow: 0 10px 15px 0 rgba($color: $black-color, $alpha: 5%);
+  z-index: 10;
 
   &__container {
     padding-top: 20px;
@@ -113,7 +114,7 @@
     margin-left: 60px;
     margin-right: 0;
 
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(lg) {
       margin-left: auto;
       margin-right: auto;
     }
@@ -136,12 +137,12 @@
     margin-right: 150px;
     margin-left: auto;
 
-    @include media-breakpoint-down(lg){
+    @include media-breakpoint-down(lg) {
       margin-left: auto;
       margin-right: 40px;
     }
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(md) {
       margin-right: 20px;
     }
 
@@ -203,7 +204,6 @@
   }
 
   &__user-block {
-
     @include media-breakpoint-down(md) {
       margin-right: 20px;
     }
@@ -245,8 +245,6 @@
   }
 
   &__nav {
-
-
     &-link {
       display: block;
       margin-top: 15px;

@@ -1,0 +1,17 @@
+.reviews-section {
+  padding-bottom: 55px;
+  padding-top: 50px;
+
+  &__reviews-list {
+    margin-top: 60px;
+    max-width: 1210px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &-item {
+      width: fit-content;
+      display: flex;
+      height: auto;
+    }
+  }
+}

@@ -22,10 +22,9 @@ const countries = supportedLocales.map((locale) => ({
 }))
 
 const getSelectedOption = () => {
-  const localValue = localStorage.getItem('user-locale')
   return {
-    value: localValue ? localValue : locale.value,
-    img: new URL(`/src/assets/images/flags/${localValue || locale.value}.svg`, import.meta.url)
+    value: locale.value,
+    img: new URL(`/src/assets/images/flags/${locale.value}.svg`, import.meta.url)
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <router-link class="link" :to="to">
     <slot class="link__icon-block"></slot>
-    {{ $t(text) }}
+    {{ text }}
   </router-link>
 </template>
 

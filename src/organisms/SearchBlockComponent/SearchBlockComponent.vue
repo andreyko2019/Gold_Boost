@@ -1,21 +1,27 @@
 <template>
   <section class="search-section">
     <div class="search-section__container">
-      <h2 class="search-section__title">
+      <h1 class="search-section__title">
         boost your <span>Gear</span> With professional in-game coaching service
-      </h2>
+      </h1>
 
-      <div class="search-section__buttons-block">
-        <LinkComponent text="" to="/Catalog/WOW">
-          <img src="@/assets/images/warcraft-classic.png" />
-        </LinkComponent>
+      <div class="search-section__inner">
+        <div class="search-section__buttons-block">
+          <LinkComponent class="search-section__button" text="" to="/Catalog/WOW">
+            <img src="@/assets/images/warcraft-classic.png" alt="Warcraft Classic" />
+          </LinkComponent>
 
-        <LinkComponent text="" to="/Catalog/WOWClassic">
-          <img src="@/assets/images/warcraft-classic.png" />
-        </LinkComponent>
+          <LinkComponent class="search-section__button" text="" to="/Catalog/WOWClassic">
+            <img src="@/assets/images/warcraft.png" alt="Warcraft" />
+          </LinkComponent>
+        </div>
+
+        <InputComponent
+          class="search-section__input-component"
+          searchButton
+          placeholderText="Search ..."
+        />
       </div>
-
-      <InputComponent placeholderText="Search ..." />
     </div>
   </section>
 </template>

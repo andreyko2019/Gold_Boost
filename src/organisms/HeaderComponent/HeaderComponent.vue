@@ -48,6 +48,7 @@
       <UserBlockComponent class="header__user-block" />
 
       <button
+        aria-label="Burger button"
         class="burger-button burger-button__animx header__burger-button"
         :class="{ 'is-active': isBurgerActive }"
         @click="toggleBurger"
