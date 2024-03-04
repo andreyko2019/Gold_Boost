@@ -2,7 +2,6 @@
 
 $gradient-default: $default-gradient-color;
 $gradient-hover: $default-gradient-color;
-$gradient-active: $gold-gradient-color;
 
 .button {
   display: flex;
@@ -100,7 +99,7 @@ $gradient-active: $gold-gradient-color;
       }
 
       &:active {
-        background: $gradient-active;
+        background: $gold-gradient-color;
       }
     }
   }

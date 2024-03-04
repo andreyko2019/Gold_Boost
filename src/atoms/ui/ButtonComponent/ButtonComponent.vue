@@ -2,10 +2,10 @@
   <button
     class="button"
     :class="{
-      button_circle: circle === true,
-      button_rectangle: rectangle === true,
-      button_transparent: transparent === true,
-      button_active: active === true
+      button_circle: circle,
+      button_rectangle: rectangle,
+      button_transparent: transparent,
+      button_active: active
     }"
     :aria-label="arialLabel"
   >
