@@ -4,3 +4,35 @@
 @import './keyframes';
 @import './mixins';
 @import './base';
+
+.line {
+  width: 100%;
+  min-height: 1px;
+  height: 1px;
+  background: rgba($color: $white-color, $alpha: 10%);
+}
+
+.section-title {
+  color: $white-color;
+  font-family: $font-family;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xxs) {
+    font-size: 18px;
+  }
+}
+
+.img_desktop { // todo: delete === picture
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.img_mobile { // todo: delete
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

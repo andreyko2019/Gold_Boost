@@ -1,0 +1,36 @@
+{
+  "locale": {
+    "en": "En",
+    "ua": "Ua"
+  },
+  "header": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "reviews": "Reviews",
+    "howItWorks": "How it works",
+    "contactSupport": "Contact support",
+    "attentionText": "leave a Trustpilot review and get an extra 10% off your next order!"
+  },
+  "footer": {
+    "infoText": "We cooperate only with qualified and experienced top world players who participate personally in each event and ready to provide you with the best boosting service and gaming experience in your favorite online games. We ensure that every customer is highly satisfied and 100% positive feedback of our work pretty much sums it up ;) Get the most relevant eu boost and power leveling.",
+    "location": {
+      "title": "Location",
+      "location1": "Here will be the location1",
+      "location2": "Here will be the location2"
+    },
+    "discount": {
+      "text": "Sing up to our email newsteller and get 10% DISCOUNT on your first order!",
+      "button": "Subscribe",
+      "inputPlaceholder": "Your e-mail"
+    },
+    "allRights": "© 2024. All rights reserved",
+    "nav": {
+      "information": "Information",
+      "socialNetworks": "Social networks",
+      "contactUs": "Contact us",
+      "privacyPolicy": "Privacy policy",
+      "termsOfUse": "Terms of use",
+      "refundPolicy": "Refund policy"
+    }
+  }
+}

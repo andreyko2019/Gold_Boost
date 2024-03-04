@@ -1,0 +1,10 @@
+.logo {
+  picture {
+    display: block;
+    max-width: 150px;
+    max-height: 30px;
+    min-width: 104px;
+    min-height: 20px;
+    width: clamp(150px, 1vw, 104px);
+  }
+}

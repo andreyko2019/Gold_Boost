@@ -4,13 +4,71 @@ $max-width-container: 1556;
 
 $main-font: 'Inter';
 $main-weight: 400;
+// todo: comment + group
+$black-color: #000000;
+$amber-color: #ffbd00;
+$blue-gray-color: #3b3d59;
+$coral-red-color: #eb5757;
+$dark-blue-color: #2b2b3d;
+$dark-blue-gray-color: #3c3e5a;
+$dark-gray-blue-color: #3b3d54;
+$dark-indigo-color: #36384f;
+$dark-midnight-blue-color: #3c3e54;
+$dark-navy-color: #2b2e3d;
+$dark-slate-color: #404259;
+$dark-slate-gray-color: #35384e;
+$dark-slate-gray-color-2: #6b6c79;
+$deep-blue-color: #3d3d59;
+$deep-blue-gray-color: #424461;
+$deep-lavender-color: #515377;
+$deep-midnight-blue-color: #34364b;
+$deep-slate-color: #424561;
+$fee-yellow: #fee229;
+$goldenrod-color: #ffc21c;
+$green-color: #2ea62e;
+$light-gray-color: #d9d9d9;
+$lighter-gray-color: #dedede;
+$midnight-blue-color: #2b2d3f;
+$midnight-color: #262638;
+$midnight-sky-color: #2b2e40;
+$mint-color: #2ed178;
+$navy-blue-color: #33364d;
+$olive-color: #54523b;
+$silver-color: #858585;
+$slate-blue-color: #42455e;
+$vibrant-green-color: #26ad61;
+$vivid-blue-color: #2e80ed;
+$white-color: #ffffff;
+$yellow-color: #ffe329;
 
-$outer-space-color: #2b2d3f;
-$bright-yellow-color: #ffbd00;
-$white-color: #fff;
-$black-color: #000;
+$default-gradient-color: linear-gradient(93deg, #ffbc19 -3.34%, #fee92c 102.31%);
+$gold-gradient-color: linear-gradient(93deg, #eca700 46.63%, #fcea4c 94.69%);
+$dark-slate-gray-gradient-color: linear-gradient(
+  180deg,
+  rgba(53, 56, 78, 0) 34.01%,
+  rgba(53, 56, 78, 0.5) 56.95%,
+  $dark-slate-gray-color 94.28%
+);
+$product-gradient-color: linear-gradient(
+  180deg,
+  rgba(52, 54, 75, 0) 75.85%,
+  rgba(52, 54, 75, 0.78) 86.75%,
+  $deep-midnight-blue-color 96.75%
+);
+$slate-blue-gradient-color: linear-gradient(180deg, #35384e 5.58%, #2b2d3f 89.8%);
+$slate-midnight-gradient-color: linear-gradient(
+  180deg,
+  #2b2d3f 37.35%,
+  rgba(43, 45, 63, 0.9) 61.41%,
+  #2b2d3f 101.51%
+);
+
+$circle-shadow: 0 5px 15px 0 rgba(255, 188, 0, 0.3);
+$circle-hover-shadow: 0 10px 20px 0 rgb(0 0 0 / 20%);
 
 $focus-color: #ccc;
+$inherit-color: inherit;
+$transparent-color: transparent;
 
 $font-family: $main-font, sans-serif;
 $font-color: $white-color;

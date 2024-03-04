@@ -1,11 +1,11 @@
 @import url('./variables.scss');
-
+// todo: delete
 * {
   padding: 0;
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  color: $fontColor;
+  color: $font-color;
 }
 
 *::before,
@@ -57,9 +57,9 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-size: $fontSize + px;
-  font-family: $fontFamily;
-  font-weight: $fontWeight;
+  font-size: $font-size + px;
+  font-family: $font-family;
+  font-weight: $font-weight;
   line-height: 1;
 }
 
@@ -73,8 +73,6 @@ input::-ms-clear {
   display: none;
 }
 
-
-
 button {
   cursor: pointer;
 
@@ -83,8 +81,6 @@ button {
     border: 0;
   }
 }
-
-
 
 ul,
 li {
@@ -106,6 +102,5 @@ h6 {
 }
 
 sup {
-  color: inherit;
+  color: $inherit-color;
 }
-
