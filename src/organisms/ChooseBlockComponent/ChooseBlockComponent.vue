@@ -1,16 +1,19 @@
 <template>
   <section class="choose-section">
-    <div class="choose-section__container">
+    <div class="choose-section__container container">
       <h2 class="choose-section__title section-title">Why choose us</h2>
 
-      <div class="choose-section__cards-list">
-        <ChooseCardComponent
-          v-for="(item, index) in chooseList"
-          :key="index"
-          :img="item.img"
-          :title="item.title"
-          :description="item.description"
-        />
+      <div class="choose-section__cards-list embla" ref="emblaRef">
+        <div class="embla__container">
+          <ChooseCardComponent
+            class="embla__slide"
+            v-for="(item, index) in chooseList"
+            :key="index"
+            :img="item.img"
+            :title="item.title"
+            :description="item.description"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -21,6 +24,7 @@ import ChooseCardComponent from '@/molecules/ChooseCardComponent/ChooseCardCompo
 import FeedbackIcon from '@/atoms/icons/FeedbackIcon.vue'
 import SafeIcon from '@/atoms/icons/SafeIcon.vue'
 import ExperienceIcon from '@/atoms/icons/ExperienceIcon.vue'
+import emblaCarouselVue from 'embla-carousel-vue'
 const chooseList = [
   {
     img: FeedbackIcon,
@@ -38,6 +42,14 @@ const chooseList = [
     description: 'There will be a text that Roman will come up with later, and we will replace it'
   }
 ]
+
+const [emblaRef] = emblaCarouselVue({
+  align: 'start',
+  breakpoints: {
+    '(max-width: 374px)': { active: false },
+    '(min-width: 1200px)': { active: false }
+  }
+})
 </script>
 
 <style>

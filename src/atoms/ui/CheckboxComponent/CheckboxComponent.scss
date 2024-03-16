@@ -1,0 +1,59 @@
+@import '@/assets/styles/base/variables';
+
+.checkbox-component{
+  display: flex;
+  column-gap: 13px;
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  .checkbox-custom {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: none;
+    border: 2px solid rgba($color: $white-color, $alpha: 10%);
+    transition:
+            background-color 0.3s,
+            border-color 0.3s;
+    position: relative;
+  }
+
+  .checkbox-input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+
+    &:checked {
+      cursor: auto;
+    }
+
+    &:checked ~ .checkbox-custom {
+      background: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $amber-color;
+        transition: background-color 0.3s;
+      }
+    }
+
+    &:not(:checked):hover + .checkbox-custom {
+      border-color: $white-color;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 <template>
+  <!--  refactoring-->
   <section class="warcraft-section">
-    <div class="warcraft-section__container">
+    <div class="warcraft-section__container container">
       <CardsFilterBlockComponent
         :title="HotOffers.title"
         :titleIcon="HotOffers.titleIcon"

@@ -1,5 +1,8 @@
 <template>
+  <router-view> </router-view>
+
   <div class="background-img-block">
+    <!--    refactoging-->
     <img
       class="background-img-block__img img_desktop"
       src="@/assets/images/MainPage/background-1.webp"
@@ -23,6 +26,8 @@
     <WarcraftBlockComponent />
   </div>
 
+  <!--  refactoring-->
+
   <component :is="lazyWarcraftClassicBlock" />
 
   <component :is="lazyChooseBlock" />
@@ -40,6 +45,10 @@
 import { defineAsyncComponent } from 'vue'
 import SearchBlockComponent from '@/organisms/SearchBlockComponent/SearchBlockComponent.vue'
 import WarcraftBlockComponent from '@/organisms/WarcraftBlockComponent/WarcraftBlockComponent.vue'
+
+defineProps({
+  settings: Object
+})
 
 const lazyInstagramBlock = defineAsyncComponent(
   () => import('@/organisms/InstagramBlockComponent/InstagramBlockComponent.vue')

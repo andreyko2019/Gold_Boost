@@ -1,4 +1,5 @@
-@import '@/assets/styles/base/index';
+@import '@/assets/styles/base/mixins';
+@import '@/assets/styles/base/variables';
 
 .review-component {
   display: flex;
@@ -31,14 +32,14 @@
     column-gap: 7px;
 
     &-rate {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       fill: $dark-slate-gray-color-2;
     }
   }
 
   &__title {
-    margin-top: 30px;
+    margin-top: 14px;
     color: $white-color;
     font-family: $font-family;
     font-size: 20px;
@@ -47,7 +48,7 @@
   }
 
   &__description {
-    margin-top: 15px;
+    margin-top: 17px;
     color: rgba($color: $white-color, $alpha: 70%);
     font-family: $font-family;
     font-size: 14px;
@@ -58,7 +59,7 @@
 
   &__link-block {
     margin-top: auto;
-
+    // refactoring
     display: flex;
     align-items: baseline;
     column-gap: 10px;

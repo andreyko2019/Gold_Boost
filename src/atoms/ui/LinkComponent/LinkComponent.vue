@@ -1,5 +1,10 @@
 <template>
-  <router-link class="link" :to="to">
+  <a class="link" :href="to" v-if="href">
+    <slot class="link__icon-block"></slot>
+    {{ text }}
+  </a>
+
+  <router-link class="link" :to="to" v-else>
     <slot class="link__icon-block"></slot>
     {{ text }}
   </router-link>
@@ -7,6 +12,7 @@
 
 <script setup>
 defineProps({
+  href: Boolean,
   text: String,
   to: [String, Object]
 })

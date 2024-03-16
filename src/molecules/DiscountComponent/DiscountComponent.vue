@@ -4,7 +4,11 @@
       {{ $t('footer.discount.text') }}
     </p>
 
-    <InputBlockComponent class="discount-block__input-block" />
+    <InputBlockComponent
+      :placeholderText="$t('footer.discount.inputPlaceholder')"
+      :buttonText="$t('footer.discount.button')"
+      class="discount-block__input-block"
+    />
   </div>
 </template>
 

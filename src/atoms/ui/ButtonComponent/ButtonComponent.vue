@@ -1,5 +1,6 @@
 <template>
   <button
+    :type="type"
     class="button"
     :class="{
       button_circle: circle,
@@ -19,7 +20,8 @@ defineProps({
   rectangle: Boolean,
   circle: Boolean,
   transparent: Boolean,
-  active: Boolean
+  active: Boolean,
+  type: { type: String, default: 'button' }
 })
 </script>
 

@@ -1,19 +1,23 @@
 <template>
+  <!--  refactoring-->
   <section class="latest-news-section">
-    <div class="latest-news-section__container">
+    <div class="latest-news-section__container container">
       <h2 class="latest-news-section__title section-title">latest news</h2>
 
-      <div class="latest-news-section__news-list">
-        <NewsCardComponent
-          v-for="(item, index) in listNews"
-          :key="index"
-          :img="item.img"
-          :imgAlt="item.imgAlt"
-          :subTitle="item.subTitle"
-          :title="item.title"
-          :description="item.description"
-          :link="item.link"
-        />
+      <div class="latest-news-section__news-list embla" ref="emblaRef">
+        <div class="embla__container">
+          <NewsCardComponent
+            class="embla__slide"
+            v-for="(item, index) in listNews"
+            :key="index"
+            :img="item.img"
+            :imgAlt="item.imgAlt"
+            :subTitle="item.subTitle"
+            :title="item.title"
+            :description="item.description"
+            :link="item.link"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -21,6 +25,7 @@
 
 <script setup>
 import NewsCardComponent from '@/molecules/NewsCardComponent/NewsCardComponent.vue'
+import emblaCarouselVue from 'embla-carousel-vue'
 
 const listNews = [
   {
@@ -51,6 +56,14 @@ const listNews = [
     link: '/'
   }
 ]
+
+const [emblaRef] = emblaCarouselVue({
+  align: 'start',
+  breakpoints: {
+    '(max-width: 374px)': { active: false },
+    '(min-width: 1210px)': { active: false }
+  }
+})
 </script>
 
 <style>

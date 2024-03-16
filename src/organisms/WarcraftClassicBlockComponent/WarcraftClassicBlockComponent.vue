@@ -1,6 +1,7 @@
 <template>
+  <!--  refactoging-->
   <section class="warcraft-classic-section">
-    <div class="warcraft-classic-section__container">
+    <div class="warcraft-classic-section__container container">
       <CardsFilterBlockComponent
         :titleIcon="WarcraftClassic.titleIcon"
         :button="WarcraftClassic.button"

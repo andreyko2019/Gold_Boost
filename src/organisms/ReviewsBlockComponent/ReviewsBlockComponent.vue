@@ -1,22 +1,27 @@
 <template>
   <section class="reviews-section">
-    <div class="reviews-section__container">
+    <div class="reviews-section__container container">
       <h2 class="reviews-section__title section-title">Reviews</h2>
-    </div>
 
-    <Swiper class="reviews-section__reviews-list" v-bind="swiperOptions">
-      <SwiperSlide class="reviews-section__reviews-list-item" v-for="(item, index) in listReviews">
-        <ReviewComponent
-          :key="index"
-          :date="item.date"
-          :rate="item.rate"
-          :title="item.title"
-          :description="item.description"
-          :textLink="item.textLink"
-          :link="item.link"
-        />
-      </SwiperSlide>
-    </Swiper>
+      <div class="reviews-section__reviews-list embla" ref="emblaRef">
+        <div class="embla__container">
+          <div
+            class="reviews-section__reviews-list-item embla__slide"
+            v-for="(item, index) in listReviews"
+          >
+            <ReviewComponent
+              :key="index"
+              :date="item.date"
+              :rate="item.rate"
+              :title="item.title"
+              :description="item.description"
+              :textLink="item.textLink"
+              :link="item.link"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <PaginationComponent />
   </section>
@@ -25,8 +30,7 @@
 <script setup>
 import PaginationComponent from '@/molecules/PaginationComponent/PaginationComponent.vue'
 import ReviewComponent from '@/molecules/ReviewComponent/ReviewComponent.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
+import emblaCarouselVue from 'embla-carousel-vue'
 
 const listReviews = [
   {
@@ -70,24 +74,13 @@ const listReviews = [
   }
 ]
 
-const swiperOptions = {
-  initialSlide: 0,
-  spaceBetween: 15,
+const [emblaRef] = emblaCarouselVue({
+  align: 'start',
   breakpoints: {
-    0: {
-      slidesPerView: '1',
-      allowTouchMove: true
-    },
-    375: {
-      slidesPerView: 'auto',
-      allowTouchMove: true
-    },
-    1210: {
-      slidesPerView: '4',
-      allowTouchMove: false
-    }
+    '(max-width: 374px)': { active: false },
+    '(min-width: 1200px)': { active: false }
   }
-}
+})
 </script>
 
 <style>

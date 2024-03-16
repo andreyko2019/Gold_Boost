@@ -6,13 +6,16 @@
     :class="{ open: isOpen }"
   >
     <div class="dropdown__selected-option" @click="toggleDropdown">
+<!--      refactoring-->
       <div class="dropdown__img-block">
         <img :src="selectedOption ? selectedOption.img : ''" class="dropdown__flag" alt="Flag" />
       </div>
 
       <span>{{ selectedOption ? selectedOption.value : '' }}</span>
 
-      <span class="dropdown__arrow"><ArrowListIcon class="dropdown__arrow-icon" /></span>
+      <span class="dropdown__arrow">
+        <ArrowListIcon class="dropdown__arrow-icon" />
+      </span>
     </div>
 
     <ul class="dropdown__options-list" v-if="isOpen">

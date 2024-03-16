@@ -2,7 +2,7 @@
   <footer class="footer">
     <hr class="line footer__line" />
 
-    <div class="footer__container">
+    <div class="footer__container container">
       <div class="footer__inner">
         <LogoComponent class="footer__logo" />
 
@@ -12,7 +12,11 @@
           </p>
 
           <div class="footer__locations">
-            <p class="footer__locations-title"><LocateIcon />{{ $t('footer.location.title') }}</p>
+            <p class="footer__locations-title">
+              <LocateIcon />
+
+              {{ $t('footer.location.title') }}
+            </p>
 
             <ul class="footer__locations-list">
               <li
@@ -39,7 +43,8 @@
                 class="footer-nav__item-link link_regular"
                 v-for="(link, index) in item.linksList"
                 :key="index"
-                :text="$t(link.text)"
+                :href="link.href"
+                :text="link.locale ? $t(link.text) : link.text"
                 :to="link.to"
                 ><component :is="link.icon" class="footer__social-icon"></component
               ></LinkComponent>
@@ -53,7 +58,7 @@
 
     <hr class="line footer__line" />
 
-    <div class="footer__container">
+    <div class="footer__container container">
       <p class="footer__all-rights">{{ $t('footer.allRights') }}</p>
     </div>
   </footer>
@@ -80,14 +85,17 @@ const footerNavList = [
     title: 'footer.nav.information',
     linksList: [
       {
+        locale: true,
         text: 'footer.nav.privacyPolicy',
         to: '/'
       },
       {
+        locale: true,
         text: 'footer.nav.termsOfUse',
         to: '/'
       },
       {
+        locale: true,
         text: 'footer.nav.refundPolicy',
         to: '/'
       }
@@ -98,18 +106,21 @@ const footerNavList = [
     linksList: [
       {
         icon: FacebookIcon,
+        href: true,
         text: 'Facebook',
-        to: '/'
+        to: 'https://www.facebook.com/'
       },
       {
         icon: InstagramIcon,
+        href: true,
         text: 'Instagram',
-        to: '/'
+        to: 'https://www.instagram.com/'
       },
       {
         icon: RedditIcon,
+        href: true,
         text: 'Reddit',
-        to: '/'
+        to: 'https://www.reddit.com/'
       }
     ]
   },

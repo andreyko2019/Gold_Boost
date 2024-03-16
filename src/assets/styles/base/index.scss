@@ -25,14 +25,9 @@
   }
 }
 
-.img_desktop {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
-}
-
-.img_mobile {
-  @include media-breakpoint-up(md) {
-    display: none;
-  }
+.page-title{
+  color: $white-color;
+  font-family: $font-family;
+  font-size: 32px;
+  font-weight: 600;
 }

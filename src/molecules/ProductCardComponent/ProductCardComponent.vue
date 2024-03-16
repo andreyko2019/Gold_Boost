@@ -2,7 +2,7 @@
   <div class="product-card">
     <div class="product-card__img-block">
       <img class="product-card__img-block-img" :src="img" :alt="imgAlt" width="280" height="220" />
-
+      <!--      refactoring-->
       <img
         class="product-card__img-block-logo"
         src="@/assets/images/warcraft-logo.webp"
@@ -38,7 +38,7 @@
 import ButtonComponent from '@/atoms/ui/ButtonComponent/ButtonComponent.vue'
 
 defineProps({
-  id: String,
+  id: Number,
   tag: {
     name: String,
     color: String

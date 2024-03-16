@@ -1,6 +1,7 @@
 <template>
+  <!--  refactoring-->
   <section class="search-section">
-    <div class="search-section__container">
+    <div class="search-section__container container">
       <h1 class="search-section__title">
         boost your <span>Gear</span> With professional in-game coaching service
       </h1>

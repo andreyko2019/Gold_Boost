@@ -1,6 +1,6 @@
 <template>
   <section class="hot-offers-section">
-    <div class="hot-offers-section__container">
+    <div class="hot-offers-section__container container">
       <CardsFilterBlockComponent :title="HotOffers.title" :listItems="HotOffers.listItems" />
     </div>
   </section>

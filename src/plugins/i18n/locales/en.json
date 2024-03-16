@@ -32,5 +32,9 @@
       "termsOfUse": "Terms of use",
       "refundPolicy": "Refund policy"
     }
+  },
+  "404": {
+    "pageNotFound": "Page not found",
+    "backToHome": "Back to home"
   }
 }

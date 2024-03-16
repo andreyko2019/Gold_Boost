@@ -1,4 +1,4 @@
-@import '@/assets/styles/base/index';
+@import '@/assets/styles/base/variables';
 
 .product-card {
   overflow: hidden;
@@ -31,7 +31,7 @@
       width: 26px;
       height: 26px;
       position: absolute;
-      bottom: 0;
+      bottom: 4px;
       left: 20px;
       z-index: 1;
     }

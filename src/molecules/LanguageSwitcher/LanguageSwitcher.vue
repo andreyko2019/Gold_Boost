@@ -12,7 +12,7 @@ import { useRouter } from 'vue-router'
 import Tr from '@/plugins/i18n/translation'
 import DropdownComponent from '@/atoms/ui/DropdownComponent/DropdownComponent.vue'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const supportedLocales = Tr.supportedLocales
 
@@ -22,9 +22,11 @@ const countries = supportedLocales.map((locale) => ({
 }))
 
 const getSelectedOption = () => {
+  const localeValue = locale.value
+
   return {
-    value: locale.value,
-    img: new URL(`/src/assets/images/flags/${locale.value}.svg`, import.meta.url)
+    value: localeValue,
+    img: new URL(`/src/assets/images/flags/${localeValue}.svg`, import.meta.url)
   }
 }
 

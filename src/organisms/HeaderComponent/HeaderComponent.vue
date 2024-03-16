@@ -1,14 +1,14 @@
 <template>
   <header class="header">
     <div class="header__attention-block header-attention-block">
-      <div class="header-attention-block__container">
+      <div class="header-attention-block__container container">
         <p class="header-attention-block__text">
           {{ $t('header.attentionText') }}
         </p>
       </div>
     </div>
 
-    <div class="header__container">
+    <div class="header__container container">
       <LogoComponent class="header__logo" />
 
       <nav class="header__nav">
@@ -25,7 +25,7 @@
       <LanguageSwitcher class="header__dropdown" />
 
       <div class="header__menu menu" :class="{ 'is-active': isBurgerActive }">
-        <div class="menu__outside-block" @click="closeMenu"></div>
+        <div class="menu__outside-block" @click="toggleBurger"></div>
 
         <div class="menu__wrapper">
           <UserBlockComponent class="menu__user-block" />
@@ -85,7 +85,11 @@ const links = [
 ]
 
 function toggleAppScroll(isDisabled) {
-  document.body.style.overflow = isDisabled ? 'hidden' : ''
+  if (isDisabled) {
+    document.body.classList.add('scroll-lock-header')
+  } else {
+    document.body.classList.remove('scroll-lock-header')
+  }
 }
 
 const toggleBurger = () => {
