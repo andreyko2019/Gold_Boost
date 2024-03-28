@@ -36,9 +36,18 @@ $vibrant-green-color: #26ad61;
 $silver-color: #858585;
 $light-gray-color: #d9d9d9;
 $lighter-gray-color: #dedede;
-$gray-color: #CACBCF;
+$gray-color: #cacbcf;
 $white-color: #ffffff;
+$cornflower-blue: #2f80ed;
+$jungle-green: #2ed177;
+$dark-gunmetal: #252738;
 
+$midnight-gradient: linear-gradient(
+                180deg,
+                rgba(43, 45, 63, 0.9) 8.59%,
+                #2b2d3f 98.36%,
+                #2a2c3d 115.82%
+);
 $default-gradient-color: linear-gradient(93deg, #ffbc19 -3.34%, #fee92c 102.31%);
 $gold-gradient-color: linear-gradient(93deg, #eca700 46.63%, #fcea4c 94.69%);
 $dark-slate-gray-gradient-color: linear-gradient(

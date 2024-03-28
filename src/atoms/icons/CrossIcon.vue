@@ -6,6 +6,7 @@
         fill="white"
       />
     </g>
+
     <defs>
       <clipPath id="clip0_503_0">
         <rect width="18" height="18" fill="white" />

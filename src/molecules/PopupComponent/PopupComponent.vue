@@ -17,6 +17,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import Trans from '@/plugins/i18n/translation.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -28,7 +29,7 @@ defineProps({
 const removeSignInFromUrl = async () => {
   const param = await route.matched[1].name
 
-  router.push({ name: param, params: { locale: route.params.locale } })
+  router.push({ name: param, params: { locale: Trans.currentLocale } })
 }
 
 const isOpen = ref(true)

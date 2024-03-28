@@ -8,6 +8,10 @@
   padding-right: 15px;
   padding-bottom: 91px;
 
+  @include media-breakpoint-down(sm){
+    padding-bottom: 20px;
+  }
+
   @include media-breakpoint-down(xs) {
     max-width: 400px;
     width: 100%;
@@ -38,6 +42,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__icon{
+    max-width: 50%;
+    max-height: 50%;
   }
 
   &__title {

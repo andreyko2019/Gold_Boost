@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { ref, shallowRef } from 'vue'
+import { shallowRef } from 'vue'
 import DiscordIcon from '@/atoms/icons/DiscordIcon.vue'
 import WhatsAppIcon from '@/atoms/icons/WhatsAppIcon.vue'
 import RadioButton from '@/atoms/ui/RadioButtonComponent/RadioButton.vue'
@@ -71,7 +71,6 @@ const channels = [
 ]
 
 const selectedChannel = shallowRef('null')
-
 const midpoint = Math.ceil(channels.length / 2)
 const firstColumnChannels = shallowRef(channels.slice(0, midpoint))
 const secondColumnChannels = shallowRef(channels.slice(midpoint))

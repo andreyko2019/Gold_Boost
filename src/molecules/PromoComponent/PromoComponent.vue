@@ -1,10 +1,7 @@
 <template>
   <div class="promo-block">
-    <InputBlockComponent
-      border
-      placeholderText="Enter the promo code"
-      buttonText="Apply"
-    ></InputBlockComponent>
+    <InputBlockComponent border placeholderText="Enter the promo code" buttonText="Apply">
+    </InputBlockComponent>
   </div>
 </template>
 

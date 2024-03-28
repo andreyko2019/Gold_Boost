@@ -7,25 +7,26 @@
     <div class="container">
       <h1 class="page-404__title">404</h1>
 
-      <p class="page-404__description">{{ $t('404.pageNotFound') }}</p>
+      <p class="page-404__description">
+        {{ $t('404.pageNotFound') }}
+      </p>
 
-      <ButtonComponent class="page-404__button" rectangle transparent @click="goToHome">{{
-        $t('404.backToHome')
-      }}</ButtonComponent>
+      <ButtonComponent class="page-404__button" rectangle transparent @click="goToHome">
+        {{ $t('404.backToHome') }}
+      </ButtonComponent>
     </div>
   </section>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
 import ButtonComponent from '@/atoms/ui/ButtonComponent/ButtonComponent.vue'
 import { useRouter } from 'vue-router'
+import Trans from '@/plugins/i18n/translation.js'
 
 const router = useRouter()
-const { locale } = useI18n()
 
 const goToHome = () => {
-  router.replace(`/${locale.value}`)
+  router.replace({ name: 'home', params: { locale: Trans.currentLocale } })
 }
 </script>
 

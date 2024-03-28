@@ -1,6 +1,6 @@
 <template>
   <label class="input-component" :class="{ 'input-component_border': border }" :for="id">
-    <template v-if="type != 'password'">
+    <template v-if="type !== 'password'">
       <input
         class="input-component__input"
         :aria-label="ariaLabel"
@@ -9,9 +9,9 @@
         :id="id"
       />
 
-      <ButtonComponent arialLabel="Search button" v-if="searchButton"
-        ><SearchIcon
-      /></ButtonComponent>
+      <ButtonComponent arialLabel="Search button" v-if="searchButton">
+        <SearchIcon />
+      </ButtonComponent>
     </template>
 
     <template v-else>
@@ -22,9 +22,9 @@
         @input="$emit('update:modelValue', $event.target.value)"
       />
 
-      <ButtonComponent arialLabel="View password" @click="togglePasswordVisibility"
-        ><EyeIcon
-      /></ButtonComponent>
+      <ButtonComponent arialLabel="View password" @click="togglePasswordVisibility">
+        <EyeIcon />
+      </ButtonComponent>
     </template>
   </label>
 </template>
@@ -48,8 +48,7 @@ defineProps({
 const inputType = ref('password')
 
 const togglePasswordVisibility = () => {
-  const newType = inputType.value === 'password' ? 'text' : 'password'
-  inputType.value = newType
+  inputType.value = inputType.value === 'password' ? 'text' : 'password'
 }
 </script>
 

@@ -7,11 +7,19 @@
   display: flex;
   flex-direction: column;
   background: $dark-slate-gray-color;
+  min-width: 290px;
 
   &__img-block {
+    user-select: none;
     position: relative;
     width: 100%;
-    height: fit-content;
+    min-width: 290px;
+    height: 170px;
+
+    img{
+      object-fit: fill;
+      top: 0;
+    }
 
     &:after {
       position: absolute;
@@ -21,8 +29,11 @@
       height: 100%;
       content: '';
       background: $dark-slate-gray-gradient-color;
+
     }
   }
+
+
 
   &__info-block {
     flex-grow: 1;
@@ -80,6 +91,7 @@
   }
 
   &__icon-block {
+    user-select: none;
     max-width: 20px;
     max-height: 20px;
 

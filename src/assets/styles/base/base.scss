@@ -17,11 +17,11 @@ body {
   overflow: clip;
 }
 
-.scroll-lock{
-    overflow: hidden;
+.scroll-lock {
+  overflow: hidden;
 
-  &-header{
-    @include media-breakpoint-down(md){
+  &-header {
+    @include media-breakpoint-down(md) {
       overflow: hidden;
     }
   }

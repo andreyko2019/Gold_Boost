@@ -6,7 +6,9 @@
       :placeholderText="placeholderText"
     />
 
-    <ButtonComponent class="input-block__button" rectangle>{{ buttonText }}</ButtonComponent>
+    <ButtonComponent class="input-block__button" rectangle>
+      {{ buttonText }}
+    </ButtonComponent>
   </div>
 </template>
 

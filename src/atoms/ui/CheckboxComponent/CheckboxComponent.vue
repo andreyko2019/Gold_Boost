@@ -4,7 +4,7 @@
       <input
         class="checkbox-input"
         type="checkbox"
-        v-model="selectedOption"
+        v-model="checkbox"
         :value="value"
         :id="id"
         :name="name"
@@ -13,12 +13,14 @@
       <div class="checkbox-custom"></div>
     </div>
 
-    <label class="checkbox-component__label"><slot></slot></label>
+    <label class="checkbox-component__label">
+      <slot></slot>
+    </label>
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { defineProps } from 'vue'
 
 defineProps({
   value: String,
@@ -26,7 +28,7 @@ defineProps({
   name: String
 })
 
-const selectedOption = ref('')
+const checkbox = defineModel()
 </script>
 
 <style scoped>

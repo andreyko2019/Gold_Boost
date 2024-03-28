@@ -6,9 +6,9 @@
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: center;
-  background: rgba($color: #2B2D3F, $alpha: 93%);
+  background: rgba($color: $midnight-blue-color, $alpha: 93%);
 
-  &__background{
+  &__background {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,19 +18,19 @@
     z-index: -1;
   }
 
-  &__title{
+  &__title {
     font-size: 248px;
     font-weight: 900;
-    background: url("@/assets/images/404/background-text.jpg");
+    background: url('@/assets/images/404/background-text.jpg');
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       font-size: 140px;
     }
   }
 
-  &__description{
+  &__description {
     color: rgba($color: $white-color, $alpha: 50%);
     text-align: center;
     font-family: $font-family;
@@ -39,7 +39,7 @@
     line-height: 1.3;
   }
 
-  &__button{
+  &__button {
     margin-top: 23px;
     margin-left: auto;
     margin-right: auto;

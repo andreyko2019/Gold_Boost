@@ -2,25 +2,25 @@
   <div class="tabs-component">
     <div class="tabs-component__header">
       <input
-        v-for="(tab, index) in tabsList"
-        :key="'tabButton_' + index"
-        :id="'tabButton_' + index"
+        v-for="tab in tabsTitleList"
+        :key="'tabButton_' + tab.id"
+        :id="'tabButton_' + tab.id"
         class="tabs-component__tab-button"
         type="radio"
         name="tabs"
-        :value="tab"
-        :checked="activeTab === tab"
+        :value="tab.title"
+        :checked="activeTab.id === tab.id"
         @change="activeTab = tab"
       />
 
       <label
-        v-for="(tab, index) in tabsList"
-        :key="'tabLabel_' + index"
-        :for="'tabButton_' + index"
+        v-for="tab in tabsTitleList"
+        :key="'tabLabel_' + tab.id"
+        :for="'tabButton_' + tab.id"
         class="tabs-component__tab-label"
-        :class="{ 'tabs-component__tab-label-active': activeTab === tab }"
+        :class="{ 'tabs-component__tab-label-active': activeTab.id === tab.id }"
       >
-        {{ tab }}
+        {{ tab.title }}
       </label>
     </div>
 
@@ -31,8 +31,7 @@
 </template>
 
 <script setup>
-defineProps(['tabsList'])
-
+defineProps(['tabsTitleList'])
 const activeTab = defineModel()
 </script>
 

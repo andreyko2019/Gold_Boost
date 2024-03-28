@@ -1,16 +1,16 @@
-@import "@/assets/styles/base/variables";
+@import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.form{
+.form {
   min-width: 373px;
   padding: 15px 35px 35px;
 
-  @include media-breakpoint-down(xs){
+  @include media-breakpoint-down(xs) {
     padding: 15px 0;
     min-width: 0;
   }
 
-  &__title{
+  &__title {
     color: $white-color;
     font-family: $font-family;
     font-size: 22px;
@@ -19,23 +19,21 @@
     margin-bottom: 30px;
   }
 
-  &__input{
+  &__input {
     width: 100%;
   }
 
-  .input-component ~ .input-component{
+  .input-component ~ .input-component {
     margin-top: 15px;
   }
 
-  &__checkbox{
-      margin-top: 21px;
+  &__checkbox {
+    margin-top: 21px;
   }
-
-
 }
 
-.sign-in{
-  &__forgot-password-button{
+.sign-in {
+  &__forgot-password-button {
     display: block;
     margin-top: 8px;
     color: $white-color;
@@ -44,12 +42,12 @@
     font-weight: 400;
   }
 
-  &__submit{
+  &__submit {
     margin-top: 28px;
     width: 100%;
   }
 
-  &__sign-up-button{
+  &__sign-up-button {
     margin-top: 19px;
     margin-left: auto;
     margin-right: auto;
@@ -62,18 +60,18 @@
     text-transform: uppercase;
   }
 
-  &__social{
+  &__social {
     text-align: center;
     margin-top: 35px;
 
-    &-title{
+    &-title {
       color: rgba($color: $white-color, $alpha: 50%);
       font-family: $font-family;
       font-size: 14px;
       font-weight: 400;
     }
 
-    &-buttons{
+    &-buttons {
       width: fit-content;
       margin-top: 20px;
       margin-left: auto;

@@ -1,7 +1,7 @@
 @import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.payment-result{
+.payment-result {
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -11,13 +11,13 @@
     padding-bottom: 60px;
   }
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__figures{
+  &__figures {
     top: 66px;
     position: absolute;
     max-width: 798px;
@@ -30,7 +30,7 @@
       max-width: 400px;
     }
 
-    &-container{
+    &-container {
       position: relative;
       height: 100%;
       margin-left: 15px;
@@ -38,7 +38,7 @@
     }
   }
 
-  &__circle-icon{
+  &__circle-icon {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -51,17 +51,17 @@
       height: 10px;
     }
 
-    &-1{
+    &-1 {
       top: 11%;
       left: 17%;
 
       @include media-breakpoint-down(xs) {
-          top: 17.5%;
+        top: 17.5%;
         left: 29.5%;
       }
     }
 
-    &-2{
+    &-2 {
       top: 39%;
       left: 28.5%;
 
@@ -71,17 +71,17 @@
       }
     }
 
-    &-3{
+    &-3 {
       bottom: 30%;
       left: 15.5%;
 
       @include media-breakpoint-down(xs) {
-       bottom: 5.5%;
+        bottom: 5.5%;
         left: 34%;
       }
     }
 
-    &-4{
+    &-4 {
       top: 3%;
       right: 25%;
 
@@ -91,7 +91,7 @@
       }
     }
 
-    &-5{
+    &-5 {
       bottom: 44%;
       right: 14%;
 
@@ -101,7 +101,7 @@
       }
     }
 
-    &-6{
+    &-6 {
       bottom: 26%;
       right: 31.5%;
 
@@ -111,7 +111,7 @@
     }
   }
 
-  &__triangle-icon{
+  &__triangle-icon {
     max-width: 18px;
     max-height: 18px;
     position: absolute;
@@ -122,7 +122,7 @@
       height: 13px;
     }
 
-    &-1{
+    &-1 {
       left: 37.5%;
       top: 1%;
       transform: rotate(15deg);
@@ -133,7 +133,7 @@
       }
     }
 
-    &-2{
+    &-2 {
       left: 0;
       bottom: 21%;
       transform: rotate(15deg);
@@ -144,7 +144,7 @@
       }
     }
 
-    &-3{
+    &-3 {
       right: 0.5%;
       bottom: 6%;
       transform: rotate(-30deg);
@@ -156,11 +156,11 @@
     }
   }
 
-  &__round{
+  &__round {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    border: 1px solid rgba($color: $white-color, $alpha: 15%);  ;
+    border: 1px solid rgba($color: $white-color, $alpha: 15%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,17 +170,17 @@
       height: 90px;
     }
 
-    &-inner{
+    &-inner {
       width: 69%;
       height: 69%;
       display: flex;
       border-radius: 50%;
       justify-content: center;
       align-items: center;
-      background: rgba($color: $white-color, $alpha: 30%);;
+      background: rgba($color: $white-color, $alpha: 30%);
     }
 
-    &-icon-block{
+    &-icon-block {
       width: 66%;
       height: 66%;
       display: flex;
@@ -190,7 +190,7 @@
       background: rgba($color: $white-color, $alpha: 50%);
     }
 
-    &-icon{
+    &-icon {
       max-width: 24px;
       max-height: 24px;
       width: 40%;
@@ -198,24 +198,24 @@
     }
   }
 
-  &__title{
+  &__title {
     margin-top: 38px;
-    color: #2ED177;
+    color: $jungle-green;
     text-align: center;
     font-family: $font-family;
     font-size: 32px;
     font-weight: 600;
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       margin-top: 65px;
     }
 
-    @include media-breakpoint-down(xxs){
+    @include media-breakpoint-down(xxs) {
       font-size: 20px;
     }
   }
 
-  &__description{
+  &__description {
     margin-top: 20px;
     max-width: 388px;
     color: rgba($color: $white-color, $alpha: 50%);
@@ -225,27 +225,27 @@
     font-weight: 400;
     line-height: 1.35;
 
-    @include media-breakpoint-down(xxs){
+    @include media-breakpoint-down(xxs) {
       margin-top: 15px;
       max-width: 252px;
     }
   }
 
-  &__button{
+  &__button {
     margin-top: 30px;
     max-width: 318px;
     width: 100%;
 
-    @include media-breakpoint-down(xxs){
+    @include media-breakpoint-down(xxs) {
       margin-top: 20px;
     }
   }
 
-  &__line{
+  &__line {
     margin-top: 50px;
     max-width: 580px;
 
-    @include media-breakpoint-down(xxs){
+    @include media-breakpoint-down(xxs) {
       margin-top: 40px;
     }
   }
@@ -303,44 +303,44 @@
     }
   }
 
-  &_success{
-    .payment-result__title{
-      color: #2ED177;
+  &_success {
+    .payment-result__title {
+      color: $jungle-green;
     }
 
     .payment-result__round {
-        border-color: rgba($color: #2ED177, $alpha: 15%);
+      border-color: rgba($color: $jungle-green, $alpha: 15%);
 
-        &-inner{
-          background: rgba($color: #2ED177, $alpha: 30%);
-        }
-
-        &-icon-block{
-        background: #2ED177;
-        }
+      &-inner {
+        background: rgba($color: $jungle-green, $alpha: 30%);
       }
 
-    .payment-result__triangle-icon{
-      &-2, &-3{
-        stroke: #2ED177;
+      &-icon-block {
+        background: $jungle-green;
       }
     }
 
-    .payment-result__circle-icon{
-      &-1, &-4{
-        border-color: #2ED177;
+    .payment-result__triangle-icon {
+      &-2,
+      &-3 {
+        stroke: $jungle-green;
+      }
+    }
+
+    .payment-result__circle-icon {
+      &-1,
+      &-4 {
+        border-color: $jungle-green;
       }
     }
   }
 
-
-
-  &_error{
-    .payment-result__title{
-      color: #EB5757;
+  &_error {
+    .payment-result__title {
+      color: $coral-red-color;
     }
 
-    .payment-result__footer-title{
+    .payment-result__footer-title {
       font-size: 20px;
       font-weight: 400;
 
@@ -349,32 +349,34 @@
       }
     }
 
-    .payment-result__button{
+    .payment-result__button {
       max-width: 220px;
     }
 
     .payment-result__round {
-      border-color: rgba($color: #EB5757, $alpha: 15%);
+      border-color: rgba($color: $coral-red-color, $alpha: 15%);
 
-      &-inner{
-        background: rgba($color: #EB5757, $alpha: 30%);
+      &-inner {
+        background: rgba($color: $coral-red-color, $alpha: 30%);
       }
 
-      &-icon-block{
-        background: #EB5757;
-      }
-    }
-
-    .payment-result__triangle-icon{
-      &-2, &-3{
-        stroke: #EB5757;
+      &-icon-block {
+        background: $coral-red-color;
       }
     }
 
-    .payment-result__round-icon{
+    .payment-result__triangle-icon {
+      &-2,
+      &-3 {
+        stroke: $coral-red-color;
+      }
+    }
+
+    .payment-result__round-icon {
       position: relative;
-      
-      &:before, &:after{
+
+      &:before,
+      &:after {
         top: 50%;
         left: 0;
         content: '';
@@ -385,18 +387,19 @@
         transform: translate(0, -50%);
       }
 
-      &:before{
+      &:before {
         transform: rotate(-45deg);
       }
 
-      &:after{
+      &:after {
         transform: rotate(45deg);
       }
     }
 
-    .payment-result__circle-icon{
-      &-1, &-4{
-        border-color: #EB5757;
+    .payment-result__circle-icon {
+      &-1,
+      &-4 {
+        border-color: $coral-red-color;
       }
     }
   }

@@ -1,23 +1,23 @@
 @import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.attention-block{
+.attention-block {
   display: flex;
   column-gap: 15px;
   align-items: flex-start;
 
-  @include media-breakpoint-down(xs){
+  @include media-breakpoint-down(xs) {
     column-gap: 10px;
   }
 
-  &__icon{
+  &__icon {
     min-width: 18px;
     min-height: 18px;
     width: 18px;
     height: 18px;
     fill: rgba($color: $white-color, $alpha: 50%);
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       min-width: 16px;
       min-height: 16px;
       width: 16px;
@@ -25,7 +25,7 @@
     }
   }
 
-  &__text{
+  &__text {
     max-width: 317px;
     color: rgba($color: $white-color, $alpha: 50%);
     font-family: $font-family;
@@ -33,7 +33,7 @@
     font-weight: 400;
     line-height: 1.35;
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       font-size: 12px;
     }
   }

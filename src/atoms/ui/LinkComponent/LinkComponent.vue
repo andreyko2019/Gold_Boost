@@ -1,5 +1,5 @@
 <template>
-  <a class="link" :href="to" v-if="href">
+  <a class="link" :href="to" v-if="href" target="_blank">
     <slot class="link__icon-block"></slot>
     {{ text }}
   </a>

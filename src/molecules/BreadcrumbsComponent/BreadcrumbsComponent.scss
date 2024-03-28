@@ -1,19 +1,19 @@
-.breadcrumbs{
+.breadcrumbs {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   column-gap: 15px;
   row-gap: 15px;
 
-  &__link-block{
+  &__link-block {
     display: flex;
 
     align-items: baseline;
-    color: rgba(255, 255, 255, 0.50);
+    color: rgba(255, 255, 255, 0.5);
   }
 
-  &__link{
+  &__link {
     margin-left: 16px;
-    color: rgba(255, 255, 255, 0.50);
+    color: rgba(255, 255, 255, 0.5);
   }
 }

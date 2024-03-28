@@ -1,28 +1,28 @@
-@import "@/assets/styles/base/variables";
+@import '@/assets/styles/base/variables';
 
 .catalog-page {
   padding-top: 150px;
 
-  &__container{
-
+  &__container {
   }
 
-  &__inner{
+  &__inner {
     display: flex;
+    column-gap: 20px;
   }
 
-  &__asside{
+  &__asside {
     height: 100%;
     min-width: 280px;
   }
 
-  &__title-block{
+  &__title-block {
     margin-top: 60px;
     display: flex;
     align-items: center;
   }
 
-  &__title{
+  &__title {
     color: $white-color;
     font-family: $font-family;
     font-size: 40px;
@@ -31,7 +31,7 @@
     text-transform: uppercase;
   }
 
-  &__description{
+  &__description {
     margin-top: 20px;
     color: rgba($color: $white-color, $alpha: 70%);
     font-family: $font-family;
@@ -40,14 +40,14 @@
     line-height: 1.35;
   }
 
-  &__products-list{
+  &__products-list {
     margin-top: 83px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  &__worth-block{
+  &__worth-block {
     margin-top: 50px;
     margin-bottom: 50px;
   }

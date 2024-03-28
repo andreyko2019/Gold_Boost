@@ -1,26 +1,26 @@
 @import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.tabs-component{
-  &__header{
+.tabs-component {
+  &__header {
     display: flex;
     border-bottom: 1px solid rgba($color: $white-color, $alpha: 10%);
     column-gap: 60px;
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       column-gap: 40px;
     }
 
-    @include media-breakpoint-down(xxs){
+    @include media-breakpoint-down(xxs) {
       justify-content: space-between;
     }
   }
 
-  &__tab-button{
+  &__tab-button {
     display: none;
   }
 
-  &__tab-label{
+  &__tab-label {
     position: relative;
     display: block;
     color: rgba($color: $white-color, $alpha: 50%);
@@ -30,36 +30,37 @@
     padding-bottom: 20px;
     cursor: pointer;
 
-    &-active{
-      cursor: default;
-      color: #FFBD00;
 
-      &:after{
-        background: #FFBD00;
+    &-active {
+      cursor: default;
+      color: $amber-color;
+
+      &:after {
+        background: $amber-color;
       }
     }
 
-    &:not(&-active){
-      &:hover{
+    &:not(&-active) {
+      &:hover {
         color: $white-color;
 
-        &:after{
+        &:after {
           background: $white-color;
         }
       }
 
-      &:active{
-        color: #FFBD00;
+      &:active {
+        color: $amber-color;
 
-        &:after{
-          background: #FFBD00;
+        &:after {
+          background: $amber-color;
         }
       }
     }
 
-    &:after{
+    &:after {
       position: absolute;
-      content: "";
+      content: '';
       bottom: -1px;
       left: 0;
       width: 100%;
@@ -67,7 +68,7 @@
     }
   }
 
-  &__body{
+  &__body {
     padding-top: 40px;
     padding-bottom: 40px;
   }

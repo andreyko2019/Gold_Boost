@@ -17,7 +17,7 @@
     </thead>
 
     <tbody class="product-order-info__body">
-      <tr class="product-order-info__body-item" v-for="i in 2">
+      <tr class="product-order-info__body-item">
         <td class="product-order-info__body-product">
           <div class="product-order-info__body-product-flex">
             <div class="product-order-info__img-block">

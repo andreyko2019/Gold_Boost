@@ -1,7 +1,7 @@
 <template>
   <div class="discount-block">
     <p class="discount-block__description">
-      {{ $t('footer.discount.text') }}
+      {{ text }}
     </p>
 
     <InputBlockComponent
@@ -14,6 +14,8 @@
 
 <script setup>
 import InputBlockComponent from '@/molecules/InputBlockComponent/InputBlockComponent.vue'
+
+defineProps(['text'])
 </script>
 
 <style>

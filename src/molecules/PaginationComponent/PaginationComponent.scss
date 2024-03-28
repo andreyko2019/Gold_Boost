@@ -1,0 +1,48 @@
+@import "@/assets/styles/base/variables";
+
+.pagination{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+
+  &__button{
+    width: 45px;
+    height: 45px;
+
+    &-circle{
+      width: 10px;
+      height: 10px;
+      max-width: 10px;
+      max-height: 10px;
+      background: #40425A;
+      border-radius: 50%;
+      padding: 0;
+      &_active{
+        background: $default-gradient-color!important;
+      }
+    }
+
+    svg{
+      fill: rgba($color: $white-color, $alpha: 20%);
+    }
+
+    &_prev{
+      transform: rotate(-180deg);
+
+      &:active{
+        transform: rotate(-180deg);
+      }
+    }
+
+    &_next{
+
+    }
+  }
+
+  &__circle-list{
+    display: flex;
+    column-gap: 15px;
+  }
+}
+

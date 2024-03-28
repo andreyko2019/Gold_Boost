@@ -1,6 +1,6 @@
 @import '@/assets/styles/base/variables';
 
-.checkbox-component{
+.checkbox-component {
   display: flex;
   column-gap: 13px;
 }
@@ -17,8 +17,8 @@
     background: none;
     border: 2px solid rgba($color: $white-color, $alpha: 10%);
     transition:
-            background-color 0.3s,
-            border-color 0.3s;
+      background-color 0.3s,
+      border-color 0.3s;
     position: relative;
   }
 
@@ -38,7 +38,7 @@
     &:checked ~ .checkbox-custom {
       background: none;
 
-      &::before {
+      &:before {
         content: '';
         position: absolute;
         top: 50%;

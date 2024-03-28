@@ -27,7 +27,7 @@
     </thead>
 
     <tbody class="products-status__body">
-      <tr class="products-status__item" v-for="i in 6">
+      <tr class="products-status__item">
         <td class="products-status__item-background products-status__item-product-details">
           <div class="products-status__item-img-block">
             <img

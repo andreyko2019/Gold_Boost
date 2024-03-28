@@ -1,3 +1,4 @@
+<!--TODO-->
 <template>
   <DropdownComponent
     :optionsList="countries"
@@ -7,22 +8,20 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import Tr from '@/plugins/i18n/translation'
 import DropdownComponent from '@/atoms/ui/DropdownComponent/DropdownComponent.vue'
-
-const { locale } = useI18n()
+import Trans from '@/plugins/i18n/translation'
 
 const supportedLocales = Tr.supportedLocales
 
 const countries = supportedLocales.map((locale) => ({
   value: locale,
-  img: new URL(`/src/assets/images/flags/${locale}.svg`, import.meta.url)
+  img: new URL(`/src/assets/images/flags/${Trans.currentLocale}.svg`, import.meta.url)
 }))
 
 const getSelectedOption = () => {
-  const localeValue = locale.value
+  const localeValue = Trans.currentLocale
 
   return {
     value: localeValue,
@@ -43,7 +42,7 @@ const switchLanguage = async (value) => {
     await router.replace({ params: { locale: newLocale } })
   } catch (e) {
     console.log(e)
-    router.push('/')
+    router.replace({ name: 'home', params: { locale: Trans.currentLocale } })
   }
 }
 

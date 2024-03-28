@@ -1,24 +1,18 @@
-@import "@/assets/styles/base/mixins";
+@import '@/assets/styles/base/mixins';
 
-.promo-block{
+.promo-block {
   max-width: 471px;
   width: 100%;
 
   .input-block {
-
-    &__button{
+    &__button {
       max-width: 180px;
       width: 100%;
     }
 
-
-  @include media-breakpoint-down(xxs){
-
+    @include media-breakpoint-down(xxs) {
       flex-direction: column;
       row-gap: 15px;
-
-
-
-  }
+    }
   }
 }

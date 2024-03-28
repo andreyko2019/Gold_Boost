@@ -8,15 +8,9 @@
       <HomeIcon />
     </LinkComponent>
 
-    <div class="breadcrumbs__link-block" v-for="(link, index) in linkItems">
+    <div class="breadcrumbs__link-block" v-for="(item, index) in list" :key="index">
       /
-      <LinkComponent
-        class="breadcrumbs__link"
-        :key="index"
-        :text="link.text"
-        :to="{ name: link.pageName, params: { locale: $route.params.locale } }"
-      >
-      </LinkComponent>
+      <LinkComponent class="breadcrumbs__link" :text="item.text" :to="item.link"> </LinkComponent>
     </div>
   </div>
 </template>
@@ -26,10 +20,10 @@ import LinkComponent from '@/atoms/ui/LinkComponent/LinkComponent.vue'
 import HomeIcon from '@/atoms/icons/HomeIcon.vue'
 
 defineProps({
-  linkItems: [
+  list: [
     {
       text: String,
-      pageName: String
+      link: String
     }
   ]
 })

@@ -8,6 +8,7 @@
         :button="HotOffers.button"
         :listItems="HotOffers.listItems"
         :filters="HotOffers.filters"
+        :isLoading="true"
       />
     </div>
   </section>

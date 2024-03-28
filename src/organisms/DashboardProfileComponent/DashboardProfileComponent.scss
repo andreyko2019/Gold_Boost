@@ -1,12 +1,11 @@
 @import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.profile{
-
-  &__email-table{
+.profile {
+  &__email-table {
     gap: 60px;
 
-    &-title{
+    &-title {
       color: rgba($color: $white-color, $alpha: 30%);
       font-family: $font-family;
       font-size: 14px;
@@ -14,54 +13,54 @@
       text-align: left;
       padding-bottom: 15px;
 
-      &:not(:first-child){
+      &:not(:first-child) {
         padding-left: 60px;
       }
     }
 
-    &-value{
+    &-value {
       color: rgba($color: $white-color, $alpha: 60%);
       font-family: $font-family;
       font-size: 16px;
       font-weight: 600;
 
-      &:not(:first-child){
+      &:not(:first-child) {
         padding-left: 60px;
       }
     }
   }
 
-  &__email-block{
+  &__email-block {
     max-width: 580px;
     padding-bottom: 35px;
     border-bottom: 1px solid rgba($color: $white-color, $alpha: 10%);
   }
 
-  &__payments-methods{
+  &__payments-methods {
     max-width: 580px;
     padding-bottom: 35px;
     border-bottom: 1px solid rgba($color: $white-color, $alpha: 10%);
   }
 
-  &__communication-channels{
+  &__communication-channels {
     max-width: 580px;
     padding-bottom: 35px;
     border-bottom: 1px solid rgba($color: $white-color, $alpha: 10%);
   }
 
-  &__checkbox{
+  &__checkbox {
     margin-top: 25px;
   }
 
-  &__payments-list{
-   margin-top: 22px;
+  &__payments-list {
+    margin-top: 22px;
   }
 
-  &__channels-list{
+  &__channels-list {
     margin-top: 25px;
   }
 
-  &__title{
+  &__title {
     margin-top: 40px;
     color: $white-color;
     font-family: $font-family;
@@ -69,13 +68,13 @@
     font-weight: 500;
   }
 
-  &__button{
+  &__button {
     margin-top: 60px;
     max-width: 230px;
     width: 100%;
   }
 
-  &__checkbox-text{
+  &__checkbox-text {
     color: rgba($color: $white-color, $alpha: 70%);
     font-family: $font-family;
     font-size: 16px;

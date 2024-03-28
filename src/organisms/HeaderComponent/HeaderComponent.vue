@@ -65,21 +65,21 @@ import LogoComponent from '@/atoms/LogoComponent/LogoComponent.vue'
 import LinkComponent from '@/atoms/ui/LinkComponent/LinkComponent.vue'
 import UserBlockComponent from '@/molecules/UserBlockComponent/UserBlockComponent.vue'
 import LanguageSwitcher from '@/molecules/LanguageSwitcher/LanguageSwitcher.vue'
-
+import Trans from '@/plugins/i18n/translation.js'
 const isBurgerActive = ref(false)
 
 const links = [
   {
     text: 'header.reviews',
-    link: '/'
+    link: { name: 'not found', params: { locale: Trans.currentLocale } }
   },
   {
     text: 'header.howItWorks',
-    link: '/'
+    link: { name: 'not found', params: { locale: Trans.currentLocale } }
   },
   {
     text: 'header.contactSupport',
-    link: '/',
+    link: { name: 'not found', params: { locale: Trans.currentLocale } },
     class: 'link_gradient'
   }
 ]
@@ -95,10 +95,6 @@ function toggleAppScroll(isDisabled) {
 const toggleBurger = () => {
   isBurgerActive.value = !isBurgerActive.value
   toggleAppScroll(isBurgerActive.value)
-}
-
-const closeMenu = () => {
-  isBurgerActive.value = false
 }
 </script>
 

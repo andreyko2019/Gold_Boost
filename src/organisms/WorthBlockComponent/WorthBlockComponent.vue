@@ -1,22 +1,20 @@
 <template>
   <section class="worth">
-    <div class="worth__container container">
-      <h2 class="worth__title section-title">Worth a look</h2>
+    <h2 class="worth__title section-title">Worth a look</h2>
 
-      <div class="worth__list-block embla" ref="emblaRef">
-        <div class="embla__container">
-          <WorthCardComponent
-            class="worth__list-block-card embla__slide"
-            v-for="(item, index) in list"
-            :key="index"
-            :id="item.id"
-            :img="item.img"
-            :imgAlt="item.imgAlt"
-            :title="item.title"
-            :countOffers="item.countOffers"
-            :link="item.link"
-          />
-        </div>
+    <div class="embla" ref="emblaRef">
+      <div class="worth__list-block embla__container">
+        <WorthCardComponent
+          class="worth__list-block-card embla__slide"
+          v-for="(item, index) in worthList"
+          :key="index"
+          :id="item['catalog_page']"
+          :img="item.image"
+          :imgAlt="item['image_alt']"
+          :title="item.title"
+          :countOffers="item.offers"
+          :link="item.link"
+        />
       </div>
     </div>
   </section>
@@ -26,6 +24,9 @@
 import WorthCardComponent from '@/molecules/WorthCardComponent/WorthCardComponent.vue'
 import ProductImg from '@/assets/images/MainPage/product-1.png'
 import emblaCarouselVue from 'embla-carousel-vue'
+import axios from 'axios'
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 const list = [
   {
@@ -61,6 +62,25 @@ const [emblaRef] = emblaCarouselVue({
     '(min-width: 1210px)': { active: false }
   }
 })
+
+const route = useRoute()
+const worthList = ref()
+const isLoading = ref(true)
+
+const getWorthList = async () => {
+  try {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_URL}/api/catalog-page/${route.params.catalogId}/worth-look/`
+    )
+    worthList.value = response.data
+    isLoading.value = false
+    console.log(worthList)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+getWorthList()
 </script>
 
 <style>

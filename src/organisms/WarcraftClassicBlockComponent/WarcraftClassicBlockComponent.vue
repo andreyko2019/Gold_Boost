@@ -8,6 +8,7 @@
         :title="WarcraftClassic.title"
         :listItems="WarcraftClassic.listItems"
         :filters="WarcraftClassic.filters"
+        :isLoading="true"
       />
     </div>
   </section>

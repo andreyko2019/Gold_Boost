@@ -4,11 +4,34 @@
   padding-bottom: 69px;
   padding-top: 55px;
 
+  @include media-breakpoint-down(sm){
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
   &__news-list {
     margin-top: 40px;
 
-    .embla__slide{
-      max-width: 380px;
+    @include media-breakpoint-down(sm){
+      margin-top: 30px;
     }
+
+    .embla__slide {
+      @include media-breakpoint-up(xs){
+      max-width: 380px;
+      }
+    }
+  }
+}
+
+.latest-news-embla{
+  &__container{
+    column-gap: 20px;
+
+    @include media-breakpoint-down(xxs){
+      display: grid;
+      row-gap: 30px;
+    }
+
   }
 }

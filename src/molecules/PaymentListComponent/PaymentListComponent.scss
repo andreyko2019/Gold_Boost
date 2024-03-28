@@ -1,17 +1,17 @@
 @import '@/assets/styles/base/variables';
 @import '@/assets/styles/base/mixins';
 
-.payment-list{
+.payment-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: fit-content;
   gap: 10px;
 
-  @include media-breakpoint-down(xs){
+  @include media-breakpoint-down(xs) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  &__icon{
+  &__icon {
     max-height: 54px;
     max-width: 54px;
     width: 100%;
@@ -20,24 +20,22 @@
     transition: fill 0.3s;
   }
 
-  .radio-input{
-
-    &:checked ~ .radio-component__label{
-      .payment-list__icon{
-        fill: #FFBD00;
+  .radio-input {
+    &:checked ~ .radio-component__label {
+      .payment-list__icon {
+        fill: $amber-color;
       }
     }
 
     &:not(:checked):hover ~ .radio-component__label {
-      .payment-list__icon{
+      .payment-list__icon {
         fill: $white-color;
-
       }
     }
   }
 }
 
-.payment-item{
+.payment-item {
   .radio-container {
     justify-content: center;
     overflow: hidden;
@@ -45,20 +43,18 @@
     width: 111px;
     height: 50px;
     align-items: center;
-    background: #35384E;
+    background: $dark-slate-gray-color;
     padding: 0 15px;
 
-    .radio-custom{
+    .radio-custom {
       width: 14px;
       height: 14px;
       min-height: 14px;
       min-width: 14px;
     }
 
-    @include media-breakpoint-down(xs){
+    @include media-breakpoint-down(xs) {
       width: 140px;
     }
   }
-
-
 }

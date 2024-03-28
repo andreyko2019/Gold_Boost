@@ -12,6 +12,7 @@ import CheckoutPage from '@/pages/CheckoutPage/CheckoutPage.vue'
 import SignUpComponent from '@/organisms/SignUpComponent/SignUpComponent.vue'
 import ForgotPassword from '@/organisms/ForgotPassword/ForgotPassword.vue'
 import ConfirmEmailComponent from '@/organisms/ConfirmEmailComponent/ConfirmEmailComponent.vue'
+import ResetPasswordComponent from '@/organisms/ResetPasswordComponent/ResetPasswordComponent.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),
@@ -25,6 +26,7 @@ const router = createRouter({
           path: '',
           name: 'home',
           component: MainPage,
+          props: true,
           meta: {
             title: 'Головна сторінка',
             metaTags: [
@@ -36,29 +38,34 @@ const router = createRouter({
           },
           children: [
             {
-              path: 'Sign_In',
+              path: 'sign-in',
               name: 'home sign in',
               component: SignInComponent
             },
             {
-              path: 'Sign_Up',
+              path: 'sign-up',
               name: 'home sign up',
               component: SignUpComponent
             },
             {
-              path: 'Forgot_Password',
+              path: 'forgot-password',
               name: 'home forgot password',
               component: ForgotPassword
             },
             {
-              path: 'Confirm_Email/:uidb64/:token',
+              path: 'confirm-reset/:uidb64/:token',
+              name: 'home reset password',
+              component: ResetPasswordComponent
+            },
+            {
+              path: 'confirm-email/:uidb64/:token',
               name: 'emailConfirmation',
               component: ConfirmEmailComponent
             }
           ]
         },
         {
-          path: 'Catalog',
+          path: 'catalog/:catalogId',
           name: 'catalog',
           component: CatalogPage,
           children: [
@@ -80,17 +87,17 @@ const router = createRouter({
           ]
         },
         {
-          path: 'Product',
+          path: 'product/:productId',
           name: 'product',
           component: ProductPage,
           children: [
             {
-              path: 'Sign_In',
+              path: 'sign-in',
               name: 'product sign in',
               component: SignInComponent
             },
             {
-              path: 'Sign_Up',
+              path: 'sign-up',
               name: 'product sign up',
               component: SignUpComponent
             },
@@ -118,6 +125,10 @@ const router = createRouter({
         },
         {
           path: ':pathMatch(.*)*',
+          redirect: { name: 'not found' }
+        },
+        {
+          path: '404',
           name: 'not found',
           component: Page404,
           children: [

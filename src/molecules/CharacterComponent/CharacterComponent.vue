@@ -1,41 +1,36 @@
 <template>
   <div class="character-block">
     <div class="character-block__item character-block__item-battleTag">
-      <label class="character-block__item-label" for="BattleTag"
-        >BattleTag
-
+      <label class="character-block__item-label" for="BattleTag">
+        BattleTag
         <InputComponent class="character-block__item-input" id="BattleTag" />
       </label>
     </div>
 
     <div class="character-block__item character-block__item-class">
-      <label class="character-block__item-label" for="Class and Spec"
-        >Class and Spec
-
+      <label class="character-block__item-label" for="Class and Spec">
+        Class and Spec
         <InputComponent class="character-block__item-input" id="Class and Spec" />
       </label>
     </div>
 
     <div class="character-block__item character-block__item-character-name">
-      <label class="character-block__item-label" for="Character Name"
-        >Character Name
-
+      <label class="character-block__item-label" for="Character Name">
+        Character Name
         <InputComponent class="character-block__item-input" id="Character Name" />
       </label>
     </div>
 
     <div class="character-block__item character-block__item-faction">
-      <label class="character-block__item-label" for="Faction"
-        >Faction
-
+      <label class="character-block__item-label" for="Faction">
+        Faction
         <InputComponent class="character-block__item-input" id="Faction" />
       </label>
     </div>
 
     <div class="character-block__item character-block__item-realm">
-      <label class="character-block__item-label" for="Realm"
-        >Realm
-
+      <label class="character-block__item-label" for="Realm">
+        Realm
         <InputComponent class="character-block__item-input" id="Realm" />
       </label>
     </div>
@@ -43,7 +38,6 @@
     <div class="character-block__item character-block__item-additional">
       <label class="character-block__item-label" for="Additional Info">
         Additional Info
-
         <InputComponent class="character-block__item-input" id="Additional Info" />
 
         <InputComponent
@@ -56,7 +50,7 @@
 
     <div class="character-block__item character-block__item-button">
       <ButtonComponent
-        v-if="visibleCharacters === index && index != maxCharacters"
+        v-if="visibleCharacters === index && index !== maxCharacters"
         rectangle
         @click="addCharacter()"
         >Add a character ({{ maxCharacters - index }})

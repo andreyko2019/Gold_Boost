@@ -1,13 +1,13 @@
 @import '@/assets/styles/base/variables';
 
-.basket-page{
+.basket-page {
   flex: 100%;
   overflow: hidden;
   padding-top: 39px;
   padding-bottom: 80px;
   position: relative;
 
-  &__background-block{
+  &__background-block {
     position: absolute;
     top: 0;
     left: 0;
@@ -22,16 +22,15 @@
       height: 100%;
       content: '';
       position: absolute;
-      background: linear-gradient(180deg, rgba(43, 45, 63, 0.90) 8.59%, #2B2D3F 98.36%, #2A2C3D 115.82%);
-
+      background: $midnight-gradient;
     }
   }
 
-  &__background-img{
+  &__background-img {
     position: relative;
   }
 
-  &__title{
+  &__title {
     margin-top: 50px;
     color: $white-color;
     font-family: $font-family;
@@ -39,7 +38,7 @@
     font-weight: 600;
   }
 
-  &__button{
+  &__button {
     margin-top: 50px;
     max-width: 280px;
     width: 100%;

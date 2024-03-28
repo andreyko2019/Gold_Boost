@@ -25,9 +25,53 @@
   }
 }
 
-.page-title{
+.page-title {
   color: $white-color;
   font-family: $font-family;
   font-size: 32px;
   font-weight: 600;
+}
+
+.validate-error {
+  margin-top: 5px;
+  color: $coral-red-color;
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.input-component_border.validate-input-error {
+  outline: 1px solid $coral-red-color;
+}
+
+.checkbox-component.form__checkbox.validate-checkbox-error {
+  .checkbox-custom {
+    border: 2px solid $coral-red-color;
+  }
+}
+
+.embla {
+  position: relative;
+  max-width: 1210px;
+}
+.embla__container {
+  display: flex;
+}
+
+.discount{
+  border-radius: 50px;
+  background: #FEE229;
+  padding: 4px 7px;
+  color: #34364B;
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:before{
+    content: '-';
+  }
+
+  &:after{
+    content: '%';
+  }
 }

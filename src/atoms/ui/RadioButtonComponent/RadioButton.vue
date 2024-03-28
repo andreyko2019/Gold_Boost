@@ -13,7 +13,9 @@
 
       <div class="radio-custom"></div>
 
-      <label class="radio-component__label" :for="id"><slot></slot></label>
+      <label class="radio-component__label" :for="id">
+        <slot> </slot>
+      </label>
     </div>
   </div>
 </template>
