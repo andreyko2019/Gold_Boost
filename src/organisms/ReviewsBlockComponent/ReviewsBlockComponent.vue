@@ -1,93 +1,93 @@
 <template>
   <section class="reviews-section">
-    <div class="reviews-section__container">
-      <h2 class="reviews-section__title section-title">Reviews</h2>
+    <div class="reviews-section__container container">
+      <h2 class="reviews-section__title section-title">
+        {{ $t('mainPage.reviews') }}
+      </h2>
+
+      <div class="reviews-section__reviews-list reviews-section-embla embla" ref="emblaReviewsRef">
+        <div class="reviews-section-embla__container embla__container">
+          <template v-if="!isLoading">
+            <ReviewComponent
+              class="reviews-section__reviews-list-item reviews-section-embla__slide embla__slide"
+              v-for="(item, index) in reviewsList"
+              :key="index"
+              :date="item['date_published']"
+              :rate="item['stars_count']"
+              :title="item.author"
+              :description="item.comment"
+              :textLink="item['source_of_review']"
+              :link="item['source_of_review_url']"
+            />
+          </template>
+
+          <template v-else>
+            <ReviewComponent
+              class="reviews-section__reviews-list-item reviews-section-embla__slide embla__slide"
+              v-for="(item, index) in 4"
+              :key="index"
+              :isLoading="isLoading"
+            />
+          </template>
+        </div>
+      </div>
     </div>
 
-    <Swiper class="reviews-section__reviews-list" v-bind="swiperOptions">
-      <SwiperSlide class="reviews-section__reviews-list-item" v-for="(item, index) in listReviews">
-        <ReviewComponent
-          :key="index"
-          :date="item.date"
-          :rate="item.rate"
-          :title="item.title"
-          :description="item.description"
-          :textLink="item.textLink"
-          :link="item.link"
-        />
-      </SwiperSlide>
-    </Swiper>
-
-    <PaginationComponent />
+    <PaginationComponent
+      class="reviews-section__pagination"
+      :countPages="pageCount"
+      v-model="currentPage"
+    />
   </section>
 </template>
 
 <script setup>
 import PaginationComponent from '@/molecules/PaginationComponent/PaginationComponent.vue'
 import ReviewComponent from '@/molecules/ReviewComponent/ReviewComponent.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/swiper-bundle.css'
+import emblaCarouselVue from 'embla-carousel-vue'
+import { onMounted, ref, watch } from 'vue'
+import axios from 'axios'
 
-const listReviews = [
-  {
-    date: 'September 12, 2020',
-    rate: 5,
-    title: 'Diablosanete',
-    description:
-      'So damn fast and safe is well, the manager is very friendly and patient, the booster team arrives as fast as hell and literally efficiency, worthy!',
-    textLink: 'dving.net',
-    link: '/'
-  },
-  {
-    date: 'September 12, 2020',
-    rate: 4,
-    title: 'For me',
-    description:
-      'For me, excellent customer service 10/10\n' +
-      'speed response 10/10\n' +
-      'quality service 10/10\n' +
-      'will absolutely use it again recommend ...',
-    textLink: 'dving.net',
-    link: '/'
-  },
-  {
-    date: 'September 12, 2020',
-    rate: 3,
-    title: 'Great service',
-    description:
-      'Great service. The boost got me 35+ higher in greater rifts levels and got me all the gear I needed for my build. Booster who ran me was friendly and very quick.',
-    textLink: 'dving.net',
-    link: '/'
-  },
-  {
-    date: 'September 12, 2020',
-    rate: 5,
-    title: 'Diablosanete',
-    description:
-      'So damn fast and safe is well, the manager is very friendly and patient, the booster team arrives as fast as hell and literally efficiency, worthy!',
-    textLink: 'dving.net',
-    link: '/'
-  }
-]
+const reviewsList = ref()
+const isLoading = ref(true)
+const pageSize = 4
+const pageCount = ref(1)
+const currentPage = ref(1)
 
-const swiperOptions = {
-  initialSlide: 0, //refactoring
-  spaceBetween: 15,
+const [emblaReviewsRef] = emblaCarouselVue({
+  align: 'start',
   breakpoints: {
-    0: {
-      slidesPerView: '1',
-      allowTouchMove: true //refactoring
-    },
-    375: {
-      slidesPerView: 'auto',
-      allowTouchMove: true
-    },
-    1210: {
-      slidesPerView: '4',
-      allowTouchMove: false
-    }
+    '(min-width: 1210px)': { active: false }
+  }
+})
+
+const fetchData = async (pageSize, currentPage) => {
+  try {
+    await axios
+      .get(`${import.meta.env.VITE_API_URL}/api/main/reviews/`, {
+        params: {
+          page: currentPage,
+          page_size: pageSize
+        }
+      })
+      .then((response) => {
+        reviewsList.value = response.data.items
+        pageCount.value = response.data.count
+        isLoading.value = false
+      })
+  } catch (error) {
+    console.error(error)
   }
 }
+
+onMounted(() => {
+  fetchData(pageSize, currentPage.value)
+})
+
+watch(currentPage, () => {
+  isLoading.value = true
+  fetchData(pageSize, currentPage.value)
+})
 </script>
 
 <style>

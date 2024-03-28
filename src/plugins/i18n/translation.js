@@ -1,4 +1,4 @@
-import i18n from '@/plugins/i18n'
+import i18n from '@/plugins/i18n/index.js'
 import { nextTick } from 'vue'
 
 const Trans = {

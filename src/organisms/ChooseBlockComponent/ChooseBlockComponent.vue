@@ -1,16 +1,23 @@
 <template>
   <section class="choose-section">
-    <div class="choose-section__container">
-      <h2 class="choose-section__title section-title">Why choose us</h2>
+    <div class="choose-section__container container">
+      <h2 class="choose-section__title section-title">
+        {{ $t('mainPage.whyChooseUs') }}
+      </h2>
 
-      <div class="choose-section__cards-list">
-        <ChooseCardComponent
-          v-for="(item, index) in chooseList"
-          :key="index"
-          :img="item.img"
-          :title="item.title"
-          :description="item.description"
-        />
+      <div class="choose-section__cards-list choose-section-embla embla" ref="emblaRef">
+        <div class="choose-section-embla__container embla__container">
+          <ChooseCardComponent
+            class="choose-section-embla__slide embla__slide"
+            v-for="(item, index) in chooseList"
+            :key="index"
+            :icon="item.icon"
+            :iconAlt="item['icon_alt']"
+            :title="item.title"
+            :description="item.description"
+            :isLoading="isLoading"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -18,26 +25,32 @@
 
 <script setup>
 import ChooseCardComponent from '@/molecules/ChooseCardComponent/ChooseCardComponent.vue'
-import FeedbackIcon from '@/atoms/icons/FeedbackIcon.vue'
-import SafeIcon from '@/atoms/icons/SafeIcon.vue'
-import ExperienceIcon from '@/atoms/icons/ExperienceIcon.vue'
-const chooseList = [
-  {
-    img: FeedbackIcon,
-    title: 'We are always online and give quick feedback',
-    description: 'There will be a text that Roman will come up with later, and we will replace it'
-  },
-  {
-    img: SafeIcon,
-    title: 'We only have proven products',
-    description: 'There will be a text that Roman will come up with later, and we will replace it'
-  },
-  {
-    img: ExperienceIcon,
-    title: 'Excellent experience in this field',
-    description: 'There will be a text that Roman will come up with later, and we will replace it'
+import emblaCarouselVue from 'embla-carousel-vue'
+import axios from 'axios'
+import { ref } from 'vue'
+
+const chooseList = ref([{}, {}, {}])
+const isLoading = ref(true)
+
+const [emblaRef] = emblaCarouselVue({
+  align: 'start',
+  breakpoints: {
+    '(max-width: 374px)': { active: false },
+    '(min-width: 1200px)': { active: false }
   }
-]
+})
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/main/why-choose-us/`)
+    chooseList.value = response.data
+    isLoading.value = false
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+fetchData()
 </script>
 
 <style>

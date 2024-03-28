@@ -1,0 +1,51 @@
+@import '@/assets/styles/base/variables';
+@import '@/assets/styles/base/mixins';
+
+.channels-list {
+  display: flex;
+  column-gap: 40px;
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__column {
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__radio-button-block {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  &__input {
+    margin-top: 15px;
+    max-width: 280px;
+    border-radius: 0;
+  }
+
+  .radio-input {
+    &:checked ~ .radio-component__label {
+      .channels-list__icon {
+        fill: $amber-color;
+      }
+    }
+
+    &:not(:checked):hover ~ .radio-component__label {
+      .channels-list__icon {
+        fill: $white-color;
+      }
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: rgba($color: $white-color, $alpha: 70%);
+    transition: fill 0.3s;
+  }
+}

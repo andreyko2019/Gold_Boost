@@ -6,7 +6,7 @@
     :class="{ open: isOpen }"
   >
     <div class="dropdown__selected-option" @click="toggleDropdown">
-<!--      refactoring-->
+      <!--      refactoring-->
       <div class="dropdown__img-block">
         <img :src="selectedOption ? selectedOption.img : ''" class="dropdown__flag" alt="Flag" />
       </div>

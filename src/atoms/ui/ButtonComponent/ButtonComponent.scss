@@ -1,9 +1,4 @@
-@import '@/assets/styles/base/index';
-
-// todo: refactoring
-$gradient-default: $default-gradient-color;
-$gradient-hover: $default-gradient-color;
-$gradient-active: $gold-gradient-color;
+@import '@/assets/styles/base/variables';
 
 .button {
   display: flex;
@@ -20,10 +15,8 @@ $gradient-active: $gold-gradient-color;
     padding: 14px;
 
     &.button_transparent {
-      max-width: 45px;
-      max-height: 45px;
-      min-width: 45px;
-      min-height: 45px;
+      width: 45px;
+      height: 45px;
       background: none;
       border: 1px solid rgba($color: $white-color, $alpha: 0.2);
 
@@ -41,10 +34,8 @@ $gradient-active: $gold-gradient-color;
     }
 
     &:not(.button_transparent) {
-      max-width: 50px;
-      max-height: 50px;
-      min-width: 50px;
-      min-height: 50px;
+      width: 50px;
+      height: 50px;
       background: $deep-slate-color;
       fill: $white-color;
 
@@ -92,16 +83,16 @@ $gradient-active: $gold-gradient-color;
     }
 
     &:not(.button_transparent) {
-      background: $gradient-default;
+      background: $default-gradient-color;
       box-shadow: 0 5px 15px 0 rgba(255, 188, 0, 0.3);
 
       &:hover {
-        background: $gradient-hover;
+        background: $default-gradient-color;
         box-shadow: 0 10px 20px 0 rgba($color: $white-color, $alpha: 20%);
       }
 
       &:active {
-        background: $gradient-active;
+        background: $gold-gradient-color;
       }
     }
   }
@@ -118,7 +109,7 @@ $gradient-active: $gold-gradient-color;
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.99);
   }
 
   &:not(.button_rectangle, .button_circle) {

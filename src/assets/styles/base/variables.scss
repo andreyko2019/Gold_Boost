@@ -4,43 +4,50 @@ $max-width-container: 1556;
 
 $main-font: 'Inter';
 $main-weight: 400;
-// todo: comment + group
+
 $black-color: #000000;
-$amber-color: #ffbd00;
-$blue-gray-color: #3b3d59;
-$coral-red-color: #eb5757;
+$midnight-color: #262638;
 $dark-blue-color: #2b2b3d;
-$dark-blue-gray-color: #3c3e5a;
+$navy-blue-color: #33364d;
+$midnight-blue-color: #2b2d3f;
+$blue-gray-color: #3b3d59;
 $dark-gray-blue-color: #3b3d54;
+$deep-blue-color: #3d3d59;
 $dark-indigo-color: #36384f;
 $dark-midnight-blue-color: #3c3e54;
+$deep-midnight-blue-color: #34364b;
 $dark-navy-color: #2b2e3d;
+$coral-red-color: #eb5757;
+$dark-blue-gray-color: #3c3e5a;
 $dark-slate-color: #404259;
 $dark-slate-gray-color: #35384e;
-$dark-slate-gray-color-2: #6b6c79;
-$deep-blue-color: #3d3d59;
+$slate-blue-color: #42455e;
 $deep-blue-gray-color: #424461;
-$deep-lavender-color: #515377;
-$deep-midnight-blue-color: #34364b;
 $deep-slate-color: #424561;
-$fee-yellow: #fee229;
+$dark-slate-gray-color-2: #6b6c79;
+$olive-color: #54523b;
 $goldenrod-color: #ffc21c;
+$amber-color: #ffbd00;
+$fee-yellow: #fee229;
+$yellow-color: #ffe329;
+$mint-color: #2ed178;
 $green-color: #2ea62e;
+$vibrant-green-color: #26ad61;
+$silver-color: #858585;
 $light-gray-color: #d9d9d9;
 $lighter-gray-color: #dedede;
-$midnight-blue-color: #2b2d3f;
-$midnight-color: #262638;
-$midnight-sky-color: #2b2e40;
-$mint-color: #2ed178;
-$navy-blue-color: #33364d;
-$olive-color: #54523b;
-$silver-color: #858585;
-$slate-blue-color: #42455e;
-$vibrant-green-color: #26ad61;
-$vivid-blue-color: #2e80ed;
+$gray-color: #cacbcf;
 $white-color: #ffffff;
-$yellow-color: #ffe329;
+$cornflower-blue: #2f80ed;
+$jungle-green: #2ed177;
+$dark-gunmetal: #252738;
 
+$midnight-gradient: linear-gradient(
+                180deg,
+                rgba(43, 45, 63, 0.9) 8.59%,
+                #2b2d3f 98.36%,
+                #2a2c3d 115.82%
+);
 $default-gradient-color: linear-gradient(93deg, #ffbc19 -3.34%, #fee92c 102.31%);
 $gold-gradient-color: linear-gradient(93deg, #eca700 46.63%, #fcea4c 94.69%);
 $dark-slate-gray-gradient-color: linear-gradient(

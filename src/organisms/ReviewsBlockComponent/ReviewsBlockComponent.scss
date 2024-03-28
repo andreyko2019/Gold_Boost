@@ -1,17 +1,45 @@
+@import '@/assets/styles/base/mixins';
+
 .reviews-section {
   padding-bottom: 55px;
   padding-top: 50px;
 
+  @include media-breakpoint-down(sm){
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__pagination{
+    margin-top: 45px;
+
+    @include media-breakpoint-down(sm){
+      margin-top: 35px;
+    }
+  }
+
   &__reviews-list {
     margin-top: 60px;
-    max-width: 1210px;
-    padding-left: 15px;
-    padding-right: 15px;
+
+    @include media-breakpoint-down(sm){
+      margin-top: 35px;
+    }
 
     &-item {
-      width: fit-content;
+      width: 100%;
       display: flex;
       height: auto;
+    }
+  }
+
+  &-embla{
+    &__container{
+      column-gap: 20px;
+    }
+
+    &__slide{
+      max-width: 285px;
+      min-width: 272px;
+      width: 100%;
     }
   }
 }

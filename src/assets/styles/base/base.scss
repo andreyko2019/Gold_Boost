@@ -1,25 +1,28 @@
-@import './normalize';
-
 body {
   background: $midnight-blue-color;
-
-  @include media-breakpoint-up(md) {
-    overflow: auto !important; // todo: delete
-  }
 }
 
-[class*='__container'] { // todo: delete
+.container {
   max-width: 1210px;
   margin: 0 auto;
-  padding-left: 15px; // todo: delete
-  padding-right: 15px; // todo: delete
+  padding: 0 15px;
 }
 
 .wrapper {
-  min-height: 100vh; // todo: delete
+  min-height: 100vh;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   overflow: clip;
+}
+
+.scroll-lock {
+  overflow: hidden;
+
+  &-header {
+    @include media-breakpoint-down(md) {
+      overflow: hidden;
+    }
+  }
 }

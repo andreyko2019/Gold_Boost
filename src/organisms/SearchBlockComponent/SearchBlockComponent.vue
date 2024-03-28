@@ -1,9 +1,10 @@
 <template>
-<!--  refactoring-->
+  <!--  refactoring-->
   <section class="search-section">
-    <div class="search-section__container">
+    <div class="search-section__container container">
       <h1 class="search-section__title">
-        boost your <span>Gear</span> With professional in-game coaching service
+        {{ $t('mainPage.boostYour') }} <span>{{ $t('mainPage.gear') }}</span>
+        {{ $t('mainPage.withProfessionalInGame') }}
       </h1>
 
       <div class="search-section__inner">
@@ -21,6 +22,7 @@
           class="search-section__input-component"
           searchButton
           placeholderText="Search ..."
+          v-model="searchText"
         />
       </div>
     </div>
@@ -30,6 +32,25 @@
 <script setup>
 import LinkComponent from '@/atoms/ui/LinkComponent/LinkComponent.vue'
 import InputComponent from '@/atoms/ui/InputComponent/InputComponent.vue'
+import axios from 'axios'
+import { ref } from 'vue'
+
+const searchText = ref()
+const searchResultData = ref()
+const isLoading = true
+
+const fetchResultData = async () => {
+  try {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/`)
+    searchResultData.value = response.data
+    isLoading.value = false
+    console.log(response)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+fetchResultData()
 </script>
 
 <style>

@@ -1,48 +1,55 @@
 <template>
-  <div class="background-img-block">
-<!--    refactoging-->
-    <img
-      class="background-img-block__img img_desktop"
-      src="@/assets/images/MainPage/background-1.webp"
-      alt="Background"
-      fetchpriority="high"
-      width="1600"
-      height="773"
-    />
+  <div>
+    <router-view> </router-view>
 
-    <img
-      class="background-img-block__img img_mobile"
-      src="@/assets/images/MainPage/background-1-mobile.webp"
-      alt="Background"
-      fetchpriority="high"
-      width="320"
-      height="565"
-    />
+    <div class="background-img-block">
+      <!--    refactoging-->
+      <img
+        class="background-img-block__img img_desktop"
+        src="@/assets/images/MainPage/background-1.webp"
+        alt="Background"
+        fetchpriority="high"
+        width="1600"
+        height="773"
+      />
 
-    <SearchBlockComponent />
+      <img
+        class="background-img-block__img img_mobile"
+        src="@/assets/images/MainPage/background-1-mobile.webp"
+        alt="Background"
+        fetchpriority="high"
+        width="320"
+        height="565"
+      />
 
-    <WarcraftBlockComponent />
+      <SearchBlockComponent />
+
+      <WarcraftBlockComponent />
+    </div>
+
+    <!--  refactoring-->
+
+    <component :is="lazyWarcraftClassicBlock" />
+
+    <component :is="lazyChooseBlock" />
+
+    <component :is="lazyHotOffersBlock" :gamesList="gamesList" />
+
+    <component :is="lazyReviewsBlock" />
+
+    <component :is="lazyNewsComponent" />
+
+    <component :is="lazyInstagramBlock" :siteLinks="siteLinks" :isAppLoading="isAppLoading" />
   </div>
-
-<!--  refactoring-->
-
-  <component :is="lazyWarcraftClassicBlock" />
-
-  <component :is="lazyChooseBlock" />
-
-  <component :is="lazyHotOffersBlock" />
-
-  <component :is="lazyReviewsBlock" />
-
-  <component :is="lazyNewsComponent" />
-
-  <component :is="lazyInstagramBlock" />
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 import SearchBlockComponent from '@/organisms/SearchBlockComponent/SearchBlockComponent.vue'
 import WarcraftBlockComponent from '@/organisms/WarcraftBlockComponent/WarcraftBlockComponent.vue'
+import axios from 'axios'
+
+defineProps(['siteLinks', 'isAppLoading'])
 
 const lazyInstagramBlock = defineAsyncComponent(
   () => import('@/organisms/InstagramBlockComponent/InstagramBlockComponent.vue')
@@ -62,6 +69,22 @@ const lazyHotOffersBlock = defineAsyncComponent(
 const lazyWarcraftClassicBlock = defineAsyncComponent(
   () => import('@/organisms/WarcraftClassicBlockComponent/WarcraftClassicBlockComponent.vue')
 )
+
+const gamesList = ref([])
+const isLoading = ref(true)
+
+const fetchGamesList = async () => {
+  try {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/`)
+    gamesList.value = response.data
+    console.log(gamesList.value)
+    isLoading.value = false
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+fetchGamesList()
 </script>
 
 <style>

@@ -1,4 +1,5 @@
-@import '@/assets/styles/base/index';
+@import '@/assets/styles/base/mixins';
+@import '@/assets/styles/base/variables';
 
 .burger-button {
   background: none;
@@ -41,6 +42,7 @@
       left: 0;
       top: -9px;
     }
+
     &::after {
       left: 0;
       bottom: -9px;
@@ -56,6 +58,7 @@
         left: 0;
         transform: rotate(45deg);
       }
+
       &::after {
         bottom: 0;
         left: 0;

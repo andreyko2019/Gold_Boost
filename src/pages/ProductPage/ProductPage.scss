@@ -1,0 +1,104 @@
+@import "@/assets/styles/base/variables";
+@import "@/assets/styles/base/mixins";
+
+.product-page{
+  padding-top: 40px;
+  padding-bottom: 65px;
+
+  &__title{
+    margin-top: 40px;
+    color: $white-color;
+    font-family: $font-family;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  &__main{
+    margin-top: 30px;
+    display: grid;
+    grid-template: "image aside"
+  "info aside" auto / auto auto;
+    gap: 20px;
+
+    @include media-breakpoint-down(sm){
+      grid-template: "image"
+      "aside"
+      "info" auto / auto
+    }
+  }
+
+  &__aside{
+    grid-area: aside;
+
+    &-filter{
+      background: #34364B;
+      width: 280px;
+      height: 730px;
+    }
+
+    &-total{
+      margin-top: 20px;
+      background: #34364B;
+      width: 280px;
+      height: 329px;
+    }
+  }
+
+  &__image-block{
+    overflow: hidden;
+    border-radius: 5px;
+    max-width: 841px;
+    grid-area: image;
+  }
+
+  &__product-info{
+    grid-area: info;
+    max-width: 810px;
+  }
+
+  &__description{
+    margin-top: 20px;
+    color: rgba($color: $white-color, $alpha: 60%);
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  &__tabs{
+    max-width: 798px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  .tabs-component__header{
+    position:relative;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    column-gap: 51px;
+  }
+
+  .tabs-component__tab-label{
+    width: max-content;
+    color: $white-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:after{
+      height: 4px;
+    }
+  }
+
+  .tabs-component__tab-label-active{
+    background:  linear-gradient(93deg, #FFBC19 -3.34%, #FEE92C 102.31%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+

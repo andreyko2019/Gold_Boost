@@ -1,24 +1,37 @@
-@import '@/assets/styles/base/index';
+@import '@/assets/styles/base/mixins';
 
 .latest-news-section {
   padding-bottom: 69px;
   padding-top: 55px;
 
+  @include media-breakpoint-down(sm){
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
   &__news-list {
     margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    @include media-breakpoint-down(sm){
+      margin-top: 30px;
+    }
+
+    .embla__slide {
+      @include media-breakpoint-up(xs){
+      max-width: 380px;
+      }
+    }
+  }
+}
+
+.latest-news-embla{
+  &__container{
     column-gap: 20px;
-    row-gap: 20px;
-    // refactoring
-    gap: 20px;
 
-    @include media-breakpoint-down(md) {
-      grid-template-columns: repeat(2, 1fr);
+    @include media-breakpoint-down(xxs){
+      display: grid;
+      row-gap: 30px;
     }
 
-    @include media-breakpoint-down(xs) {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 }

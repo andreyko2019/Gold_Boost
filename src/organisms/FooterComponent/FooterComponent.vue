@@ -2,32 +2,40 @@
   <footer class="footer">
     <hr class="line footer__line" />
 
-    <div class="footer__container">
+    <div class="footer__container container">
       <div class="footer__inner">
         <LogoComponent class="footer__logo" />
 
         <div class="footer__info-block">
           <p class="footer__info-text">
-            {{ $t('footer.infoText') }}
+            {{ siteLinks['footer_description'] }}
           </p>
 
           <div class="footer__locations">
-            <p class="footer__locations-title">
-              <LocateIcon />
+            <div class="footer__locations-title">
+              <div class="footer__locations-icon-block">
+                <LocateIcon class="footer__locations-icon" />
+              </div>
 
-              {{ $t('footer.location.title') }}
-            </p>
+              <p class="footer__locations-title-text">
+                {{ $t('footer.location.title') }}
+              </p>
+            </div>
 
             <ul class="footer__locations-list">
-              <li
-                class="footer__locations-item"
-                v-for="(item, index) in locationsList"
-                :key="index"
-              >
+              <li class="footer__locations-item" v-if="!isLoading">
                 <LinkComponent
                   class="footer__locations-item-link"
-                  :text="$t(item.text)"
-                  :to="item.to"
+                  :text="siteLinks.address1"
+                  :to="{ name: 'not found' }"
+                />
+              </li>
+
+              <li class="footer__locations-item" v-if="!isLoading">
+                <LinkComponent
+                  class="footer__locations-item-link"
+                  :text="siteLinks.address2"
+                  :to="{ name: 'not found' }"
                 />
               </li>
             </ul>
@@ -36,29 +44,38 @@
 
         <nav class="footer__nav footer-nav">
           <div class="footer-nav__item" v-for="(item, index) in footerNavList" :key="index">
-            <p class="footer-nav__item-title">{{ $t(item.title) }}</p>
+            <p class="footer-nav__item-title">
+              {{ $t(item.title) }}
+            </p>
 
             <div class="footer-nav__item-list">
               <LinkComponent
                 class="footer-nav__item-link link_regular"
                 v-for="(link, index) in item.linksList"
                 :key="index"
-                :text="$t(link.text)"
+                :href="link.href"
+                :text="link.locale ? $t(link.text) : link.text"
                 :to="link.to"
-                ><component :is="link.icon" class="footer__social-icon"></component
-              ></LinkComponent>
+              >
+                <component :is="link.icon" class="footer__social-icon"></component>
+              </LinkComponent>
             </div>
           </div>
         </nav>
 
-        <DiscountComponent class="footer__discount-block" />
+        <DiscountComponent
+          class="footer__discount-block"
+          :text="siteLinks['subscribe_form_text']"
+        />
       </div>
     </div>
 
     <hr class="line footer__line" />
 
-    <div class="footer__container">
-      <p class="footer__all-rights">{{ $t('footer.allRights') }}</p>
+    <div class="footer__container container">
+      <p class="footer__all-rights">
+        {{ siteLinks['footer_bottom_text'] }}
+      </p>
     </div>
   </footer>
 </template>
@@ -74,26 +91,29 @@ import WhatsAppIcon from '@/atoms/icons/WhatsAppIcon.vue'
 import DiscountComponent from '@/molecules/DiscountComponent/DiscountComponent.vue'
 import LocateIcon from '@/atoms/icons/LocateIcon.vue'
 
-const locationsList = [
-  { text: 'footer.location.location1', to: '/' },
-  { text: 'footer.location.location2', to: '/' }
-]
+const props = defineProps(['siteLinks', 'isLoading'])
 
 const footerNavList = [
   {
     title: 'footer.nav.information',
     linksList: [
       {
+        locale: true,
         text: 'footer.nav.privacyPolicy',
-        to: '/'
+        to: props.siteLinks['privacy_policy_link'],
+        href: true
       },
       {
+        locale: true,
         text: 'footer.nav.termsOfUse',
-        to: '/'
+        to: props.siteLinks['terms_of_use_link'],
+        href: true
       },
       {
+        locale: true,
         text: 'footer.nav.refundPolicy',
-        to: '/'
+        to: props.siteLinks['refund_policy_link'],
+        href: true
       }
     ]
   },
@@ -102,18 +122,21 @@ const footerNavList = [
     linksList: [
       {
         icon: FacebookIcon,
+        href: true,
         text: 'Facebook',
-        to: '/'
+        to: props.siteLinks['facebook_link']
       },
       {
         icon: InstagramIcon,
+        href: true,
         text: 'Instagram',
-        to: '/'
+        to: props.siteLinks['instagram_link']
       },
       {
         icon: RedditIcon,
+        href: true,
         text: 'Reddit',
-        to: '/'
+        to: props.siteLinks['reddit_link']
       }
     ]
   },
@@ -121,18 +144,20 @@ const footerNavList = [
     title: 'footer.nav.contactUs',
     linksList: [
       {
-        text: 'goldbost@gmail. com',
-        to: '/'
+        text: props.siteLinks.email,
+        to: `mailto:${props.siteLinks.email}`,
+        href: true
       },
       {
         icon: DiscordIcon,
         text: 'Discord',
-        to: '/'
+        to: props.siteLinks['discord_link'],
+        href: true
       },
       {
         icon: WhatsAppIcon,
         text: 'WhatsApp',
-        to: '/'
+        to: props.siteLinks['whats_up_link']
       }
     ]
   }

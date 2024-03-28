@@ -1,11 +1,12 @@
 <template>
   <button
+    :type="type"
     class="button"
     :class="{
-      button_circle: circle,  // todo: refactoring
-      button_rectangle: rectangle === true,
-      button_transparent: transparent === true,
-      button_active: active === true
+      button_circle: circle,
+      button_rectangle: rectangle,
+      button_transparent: transparent,
+      button_active: active
     }"
     :aria-label="arialLabel"
   >
@@ -14,13 +15,13 @@
 </template>
 
 <script setup>
-defineProps(['ariaLabel', 'rectangle', 'circle']) //refactoring
 defineProps({
   arialLabel: String,
   rectangle: Boolean,
   circle: Boolean,
   transparent: Boolean,
-  active: Boolean
+  active: Boolean,
+  type: { type: String, default: 'button' }
 })
 </script>
 

@@ -1,7 +1,8 @@
-@import '@/assets/styles/base/index';
+@import '@/assets/styles/base/variables';
 
 .link {
-  display: block;
+  display: flex;
+  align-items: baseline;
   width: fit-content;
   color: $white-color;
   font-family: $font-family;
